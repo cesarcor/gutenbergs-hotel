@@ -6,8 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package WordPress
- * @subpackage gutenbergs-hotel
+ * @package gutenbergs-hotel
  * @since 0.1
  */
 ?>
