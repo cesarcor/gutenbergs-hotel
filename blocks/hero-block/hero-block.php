@@ -4,7 +4,7 @@ function gh_hero_block() {
 
     wp_register_script(
         'hero-block',
-        get_template_directory_uri() . '/blocks/hero-block/index.js',
+        get_template_directory_uri() . '/blocks/hero-block/index.build.js',
         array( 'wp-blocks', 'wp-element' )
     );
 

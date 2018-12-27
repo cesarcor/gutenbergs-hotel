@@ -17,7 +17,7 @@ const {
 	BlockControls,
 	BlockAlignmentToolbar,
 	MediaUpload,
-	RichText,
+	RichText
 } = wp.editor;
 
 const {
@@ -25,21 +25,31 @@ const {
 	withFallbackStyles,
 	IconButton,
 	Dashicon,
-	Toolbar,
+	Toolbar
 } = wp.components;
 
 const heroBlockAttributes = {
 
-  heading: {
-      type: 'string',
-      source: 'attribute',
-      selector: 'h1'
+  heroHeading: {
+      type: 'array',
+      source: 'children',
+      selector: 'h2'
   },
 
-  bodyText: {
-    type: 'string',
-		source: 'text'
+  heroText: {
+    type: 'array',
+		source: 'children',
+		selector: '.hero-text'
   },
+
+	heroText_color: {
+		type: 'string',
+		default: '#f22424'
+	},
+
+	heroText_alignment: {
+		type: 'string'
+	},
 
   button: {
     type: 'string',
@@ -50,7 +60,8 @@ const heroBlockAttributes = {
     type: 'string',
     source: 'attribute',
     attribute: 'src',
-    selector: 'img'
+    selector: 'img',
+		default: 'http://localhost/hotel/wp-content/uploads/2018/12/210129.jpg'
   },
 
   backgroundImageID: {
@@ -64,27 +75,78 @@ registerBlockType( 'gutenbergs-hotel/hero-block', {
     description: __( 'Add a Hero Section', 'gutenbergs-hotel' ),
     icon: 'format-gallery',
     category: 'gh-blocks',
+		keywords: [
+			__('Hero'),
+		  __('Slider')
+		],
 
     attributes: heroBlockAttributes,
 
-    edit: function( attributes, className ) {
+    edit: function( props, className, setAttributes ) {
 
         const {
-          heading,
+          heroHeading,
           backgroundImageURL,
-          bodyText,
+          heroText,
+					heroText_color,
           button,
           backgroundImageID
         } = props.attributes;
 
         return (
+					<div class="wp-block-gutenbergs-hotel-hero-block">
 
+						<RichText
+							tagName="h1"
+							placeholder={ __( 'Hero Heading', 'gutenbergs-hotel' ) }
+							keepPlaceholderOnFocus
+							value={ heroHeading }
+							className='hero-title'
+							onChange={ (value) => setAttributes( { heroHeading } ) }
+						/>
+
+						<RichText
+							tagName="p"
+							placeholder={ __( 'Hero Text', 'gutenbergs-hotel' ) }
+							keepPlaceholderOnFocus
+							value={ heroText }
+							className='hero-text'
+							style={
+								{ color: heroText_color }
+							}
+							onChange={ (value) => setAttributes( { heroText } ) }
+						/>
+
+					</div>
         );
     },
 
-    save: function( props ) {
+    save: function( props, className ) {
 
-        return (
-        );
-    },
+				const {
+					heroHeading,
+          backgroundImageURL,
+          heroText,
+					heroText_color,
+          button,
+          backgroundImageID
+				} = props.attributes;
+
+				return ([
+					<div style="background-image: url({backgroundImageURL})">
+						<RichText.Content
+						tagName="h1"
+						value={ heroHeading }
+						/>
+
+						<RichText.Content
+						tagName="p"
+						value={ heroText }
+						/>
+
+					</div>
+				]);
+
+
+    }
 } );
