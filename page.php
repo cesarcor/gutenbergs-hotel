@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying default page template
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
@@ -14,13 +14,7 @@ get_header();
 <main>
 
   <?php
-  if ( have_posts() ):
-    while ( have_posts() ): the_post();
-
-    the_content();
-
-    endwhile;
-  endif;
+    get_template_part('template-parts/content/content', 'page');
   ?>
 
 </main>
