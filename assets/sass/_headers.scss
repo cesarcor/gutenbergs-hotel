@@ -1,0 +1,56 @@
+#masthead {
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+
+  .container {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    padding: 20px 0;
+
+    .site-logo {
+      text-align: center;
+
+      .custom-logo-link {
+        img {
+          max-height: 45px;
+          width: auto;
+        }
+      }
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      nav {
+        float: right;
+        margin-right: 10%;
+
+        ul {
+          li {
+            display: inline;
+            padding: 0 15px;
+
+            a {
+              color: $mainOrange;
+
+              &:hover{
+                color: $mainGreen;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile-nav-btn{
+  display: none;
+
+  button{
+    font-size: 25px;
+  }
+}
