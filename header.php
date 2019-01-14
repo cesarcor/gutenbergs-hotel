@@ -20,37 +20,6 @@
 
 <body <?php body_class(); ?>>
 
-  <header id="masthead" class="site-header">
+<?php gh_top_bar(); ?>
 
-    <div class="container">
-
-      <div class="site-logo">
-        <?php the_custom_logo(); ?>
-      </div>
-
-      <div class="main-nav">
-
-        <div class="mobile-nav-btn">
-          <button class="hamburger hamburger--squeeze" type="button">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
-            </span>
-          </button>
-        </div>
-
-        <?php
-          wp_nav_menu(
-            array(
-              'theme_location' => 'header-menu',
-              'container' => 'nav',
-              'container_id' => 'navigation-contain'
-            )
-          );
-        ?>
-
-      </div>
-
-    </div>
-
-
-  </header>
+<?php gh_header_type( get_theme_mod( 'gh_set_header_type' ) ); ?>
