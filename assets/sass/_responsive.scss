@@ -10,33 +10,82 @@
             .hamburger-inner::before,
             .hamburger-inner::after{
               background-color: $mainOrange;
+              height: 1px;
             }
           }
-        }
-
-        nav {
-          display: none;
-          position: absolute;
-          margin: 0 auto;
-          text-align: center;
-          width: 100%;
-          top: 10%;
-          z-index: 1000;
-          background-color: $white;
-          padding-bottom: 100%;
-
-          ul {
-            li {
-              display: block;
-              margin: 30px 0;
-            }
-          }
-        }
-
-        .active-menu{
-          display: block;
         }
       }
     }
   }
+
+  .mobile-nav-panel{
+    position: absolute;
+    background-color: #FFF;
+    width: 100%;
+    z-index: 100;
+    padding-bottom: 100%;
+
+    ul{
+      li{
+        text-align: center;
+        margin: 40px 0;
+      }
+    }
+  }
+
+
+  .active-menu,
+  .active-menu > *{
+    display: block;
+  }
+
+  #desk_nav{
+    display: none;
+  }
+
+  .header-centered{
+
+    .container{
+
+      grid-template-columns: 20% 1fr;
+
+      .site-logo,
+      .main-nav{
+        display: flex;
+      }
+
+      .site-logo{
+        margin-bottom: 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .main-nav{
+        justify-content: flex-end;
+      }
+
+    }
+
+  }
+
+  .header-distributed{
+
+    .container{
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .site-logo{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 10%;
+    }
+
+    &__right{
+      justify-content: flex-end;
+      padding-right: 10%;
+    }
+
+  }
+
 }

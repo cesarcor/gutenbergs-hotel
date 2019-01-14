@@ -1,0 +1,35 @@
+.fixed{
+  position: fixed;
+  z-index: 100;
+}
+
+.inline-list ul li{
+  display: inline;
+  padding: 0 15px;
+}
+
+.push-to-right{
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  #navigation-contain, div{
+    float: right;
+    margin-right: 10%;
+  }
+
+}
+
+/* -- Menu Variations -- */
+
+
+/* Traditional Header */
+
+.header-traditional{
+
+  .container{
+    grid-template-columns: 20% 1fr;
+  }
+
+}
