@@ -2,6 +2,6 @@
 
 document.querySelector('.hamburger').addEventListener('click', function(){
   this.classList.toggle('is-active');
-  let mobileNavMenu = document.getElementById('navigation-contain');
+  let mobileNavMenu = document.querySelector('.mobile-nav-panel');
   mobileNavMenu.classList.toggle('active-menu');
 });
