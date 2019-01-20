@@ -18,6 +18,22 @@ function gh_top_bar(){
 
 }
 
+function gh_nav_menu(){
+
+  echo '<div class="nav-panel">';
+
+      wp_nav_menu(
+        array(
+          'theme_location' => 'header-menu',
+          'container' => 'nav',
+          'container_id' => 'navigation-contain'
+        )
+      );
+
+  echo '</div>';
+
+}
+
 function gh_header_type($headerType) {
     echo '<header id="masthead" class="site-header header-' . $headerType . '">';
       echo '<div class="container">';
@@ -32,6 +48,10 @@ function gh_header_type($headerType) {
           gh_header_distributed();
         break;
 
+        case 'burger':
+          gh_header_burger();
+        break;
+
         default:
           gh_header_traditional();
         break;
@@ -39,6 +59,9 @@ function gh_header_type($headerType) {
         }
 
       echo '</div>';
+
+      gh_nav_menu();
+
     echo '</header>';
 }
 
@@ -107,7 +130,7 @@ function gh_header_distributed() {
 
       wp_nav_menu(
         array(
-          'theme_location' => 'top-bar-menu',
+          'theme_location' => 'distributed-left',
           'container' => 'nav',
           'container_id' => 'navigation-contain',
           'container_class' => 'inline-list'
@@ -138,6 +161,35 @@ function gh_header_distributed() {
           'container_class' => 'inline-list'
         )
       );
+
+  echo '</div>';
+
+}
+
+function gh_header_burger() {
+
+  echo '<div class="site-logo">';
+    the_custom_logo();
+  echo '</div>';
+
+  echo '<div class="main-nav push-to-right">
+
+    <div class="burger-nav-btn">
+      <button class="hamburger hamburger--squeeze" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>';
+
+      // wp_nav_menu(
+      //   array(
+      //     'theme_location' => 'header-menu',
+      //     'container' => 'nav',
+      //     'container_id' => 'desk_nav',
+      //     'container_class' => 'inline-list'
+      //   )
+      // );
 
   echo '</div>';
 
