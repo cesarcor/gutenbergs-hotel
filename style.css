@@ -53,10 +53,6 @@ input, button {
     margin-right: 10%; }
 
 /* -- Menu Variations -- */
-/* Traditional Header */
-.header-traditional .container {
-  grid-template-columns: 20% 1fr; }
-
 /* -- HEADER --*/
 /* ====================
 Top Bar
@@ -83,6 +79,17 @@ Top Bar
     position: relative; }
 
 /* ====================
+Traditional Header
+===================== */
+.header-traditional .container,
+.header-burger .container {
+  grid-template-columns: 20% 1fr; }
+.header-traditional #desk_nav,
+.header-burger #desk_nav {
+  position: relative;
+  right: 5%; }
+
+/* ====================
 Centered Header
 ===================== */
 .header-centered .container {
@@ -105,9 +112,31 @@ Distributed Header
 .header-distributed .container {
   grid-template-columns: 2fr 1fr 2fr; }
 
-.mobile-nav-panel,
-.mobile-nav-panel > * {
+/* ====================
+Nav Panel
+===================== */
+.nav-panel,
+.nav-panel > * {
   display: none; }
+
+.nav-panel {
+  position: absolute;
+  background-color: #FFF;
+  width: 100%;
+  z-index: 100;
+  padding-bottom: 100%; }
+  .nav-panel ul li {
+    text-align: center;
+    margin: 40px 0; }
+
+.active-menu,
+.active-menu > * {
+  display: block; }
+
+.hamburger .hamburger-inner,
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after {
+  height: 1px; }
 
 .mobile-nav-btn {
   display: none;
@@ -119,25 +148,6 @@ Distributed Header
 @media (max-width: 720px) {
   #masthead .container .main-nav .mobile-nav-btn {
     display: inline-block; }
-    #masthead .container .main-nav .mobile-nav-btn button .hamburger-inner,
-    #masthead .container .main-nav .mobile-nav-btn button .hamburger-inner::before,
-    #masthead .container .main-nav .mobile-nav-btn button .hamburger-inner::after {
-      background-color: #C8553D;
-      height: 1px; }
-
-  .mobile-nav-panel {
-    position: absolute;
-    background-color: #FFF;
-    width: 100%;
-    z-index: 100;
-    padding-bottom: 100%; }
-    .mobile-nav-panel ul li {
-      text-align: center;
-      margin: 40px 0; }
-
-  .active-menu,
-  .active-menu > * {
-    display: block; }
 
   #desk_nav {
     display: none; }

@@ -4,39 +4,9 @@
       .main-nav {
         .mobile-nav-btn {
           display: inline-block;
-
-          button{
-            .hamburger-inner,
-            .hamburger-inner::before,
-            .hamburger-inner::after{
-              background-color: $mainOrange;
-              height: 1px;
-            }
-          }
         }
       }
     }
-  }
-
-  .mobile-nav-panel{
-    position: absolute;
-    background-color: #FFF;
-    width: 100%;
-    z-index: 100;
-    padding-bottom: 100%;
-
-    ul{
-      li{
-        text-align: center;
-        margin: 40px 0;
-      }
-    }
-  }
-
-
-  .active-menu,
-  .active-menu > *{
-    display: block;
   }
 
   #desk_nav{

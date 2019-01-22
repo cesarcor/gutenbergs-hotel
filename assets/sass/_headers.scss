@@ -35,6 +35,24 @@ Top Bar
 }
 
 /* ====================
+Traditional Header
+===================== */
+
+.header-traditional,
+.header-burger{
+
+  .container{
+    grid-template-columns: 20% 1fr;
+  }
+
+  #desk_nav{
+    position: relative;
+    right: 5%;
+  }
+}
+
+
+/* ====================
 Centered Header
 ===================== */
 
@@ -80,9 +98,41 @@ Distributed Header
 
 }
 
-.mobile-nav-panel,
-.mobile-nav-panel > *{
+/* ====================
+Nav Panel
+===================== */
+
+.nav-panel,
+.nav-panel > *{
   display: none;
+}
+
+.nav-panel{
+  position: absolute;
+  background-color: #FFF;
+  width: 100%;
+  z-index: 100;
+  padding-bottom: 100%;
+
+  ul{
+    li{
+      text-align: center;
+      margin: 40px 0;
+    }
+  }
+}
+
+.active-menu,
+.active-menu > *{
+  display: block;
+}
+
+.hamburger{
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after{
+    height: 1px;
+  }
 }
 
 .mobile-nav-btn{
