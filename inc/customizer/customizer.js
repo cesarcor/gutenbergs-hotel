@@ -18,4 +18,10 @@
     });
   });
 
+  wp.customize('gh_set_header_text_color', function(val){
+    val.bind(function(newval){
+      $('.site-header nav ul li a').css('color', newval);
+    });
+  });
+
 })(jQuery);
