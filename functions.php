@@ -12,13 +12,31 @@ define('GH_THEME_DIR', get_template_directory());
 define('GH_THEME_URI', get_template_directory_uri());
 
 
+
+add_action('wp_enqueue_scripts', 'gh_enqueue_assets');
 function gh_enqueue_assets()
 {
     wp_enqueue_script('main-script-gh', GH_THEME_URI . '/js/gh.js', array(), false, true);
     wp_enqueue_style('hamburger-gh', GH_THEME_URI . '/assets/hamburger/hamburger.min.css', array(), false);
     wp_enqueue_style('main-style-gh', GH_THEME_URI . '/style.css', array(), filemtime(get_stylesheet_directory() . '/style.css'));
 }
-add_action('wp_enqueue_scripts', 'gh_enqueue_assets');
+
+/**
+ * Enqueue assets for customizer
+ *
+ *
+ **/
+
+add_action( 'customize_preview_init', 'gh_enqueue_customizer_assets' );
+function gh_enqueue_customizer_assets(){
+  wp_enqueue_script(
+    'gh_customizer_js',
+     GH_THEME_URI . '/inc/customizer/customizer.js',
+     array( 'jquery','customize-preview' ),
+     filemtime(GH_THEME_DIR . '/inc/customizer/customizer.js'),
+     true );
+}
+
 
  /**
   * Register navigation menus
@@ -37,6 +55,14 @@ function gh_register_navs()
   );
 }
 add_action('init', 'gh_register_navs');
+
+if(get_theme_mod( 'gh_set_header_type' ) == 'distributed'){
+  add_action( 'init', 'gh_distributed_left_menu' );
+  function gh_distributed_left_menu(){
+    register_nav_menu( 'distributed-left', __( 'Distributed Left', 'gh' ) );
+  }
+}
+
 
 /**
  * Add support for custom logo.
