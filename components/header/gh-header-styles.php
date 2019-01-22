@@ -38,6 +38,10 @@ function gh_custom_header_styles(){
        z-index: 100;
      }
 
+     main{
+       padding-top: 88px;
+     }
+
     <?php endif; ?>
 
   </style>
