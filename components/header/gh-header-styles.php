@@ -11,7 +11,8 @@ function gh_custom_header_styles(){
     }
 
     .main-nav a,
-    .nav-panel a{
+    .nav-panel a,
+    #left-nav a{
       color: <?php echo get_theme_mod( 'gh_set_header_text_color' ); ?>
     }
 
