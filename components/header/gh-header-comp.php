@@ -132,7 +132,7 @@ function gh_header_distributed() {
         array(
           'theme_location' => 'distributed-left',
           'container' => 'nav',
-          'container_id' => 'navigation-contain',
+          'container_id' => 'left-nav',
           'container_class' => 'inline-list'
         )
       );
