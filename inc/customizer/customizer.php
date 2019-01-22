@@ -32,7 +32,7 @@ function gh_customizer($wp_customize)
    * Header Type Section
    ========== */
     $wp_customize->add_section('gh_header_type_section', array(
-                'title' => 'Header Type',
+                'title' => 'Header Types & Layout Options',
                 'panel' => 'gh_panel_header',
                 'priority' => 10
     ));
@@ -57,6 +57,25 @@ function gh_customizer($wp_customize)
                         'burger' => 'Burger'
                 )
     ));
+
+    /*
+     * Setting: Header Scroll
+     */
+    $wp_customize->add_setting('gh_set_header_scroll', array(
+        'default' => 0
+    ));
+
+    $wp_customize->add_control('gh_cont_header_scroll', array(
+        'label' => 'Fixed When Scrolling',
+        'section' => 'gh_header_type_section',
+        'settings' => 'gh_set_header_scroll',
+        'type' => 'radio',
+        'choices' => array(
+            1 => 'enabled',
+            0 => 'disabled'
+        )
+    ));
+
 
 
 
@@ -84,23 +103,6 @@ function gh_customizer($wp_customize)
         'type' => 'text'
     ));
 
-    /*
-     * Setting: Header Scroll
-     */
-    $wp_customize->add_setting('gh_set_header_scroll', array(
-        'default' => 0
-    ));
-
-    $wp_customize->add_control('gh_cont_header_scroll', array(
-        'label' => 'Fixed When Scrolling',
-        'section' => 'gh_header_styles_section',
-        'settings' => 'gh_set_header_scroll',
-        'type' => 'radio',
-        'choices' => array(
-            1 => 'enabled',
-            0 => 'disabled'
-        )
-    ));
 
     /*
      * Setting: Header Background Color
