@@ -20,6 +20,8 @@
 
 <body <?php body_class(); ?>>
 
-<?php gh_top_bar(); ?>
+<?php
+  (get_theme_mod( 'gh_set_top_bar' ) == 1) ? gh_top_bar() : '';
+?>
 
 <?php gh_header_type( get_theme_mod( 'gh_set_header_type' ) ); ?>
