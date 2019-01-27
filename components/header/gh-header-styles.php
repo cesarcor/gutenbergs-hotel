@@ -10,6 +10,10 @@ function gh_custom_header_styles(){
       background-color: <?php echo get_theme_mod( 'gh_set_top_bar_color' ); ?>
     }
 
+    .top-bar ul li a{
+      color: <?php echo get_theme_mod( 'gh_set_top_bar_link_color' ); ?>
+    }
+
     .main-nav a,
     .nav-panel a,
     #left-nav a{
