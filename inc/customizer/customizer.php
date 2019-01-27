@@ -227,4 +227,24 @@ function gh_customizer($wp_customize)
             'settings' => 'gh_set_top_bar_color'
         )
     ));
+
+    /*
+     * Setting: Top Bar Link color
+     */
+    $wp_customize->add_setting('gh_set_top_bar_link_color', array(
+            'default' => 'C8553D',
+            'transport' => 'postMessage'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control(
+        $wp_customize,
+        'gh_cont_top_bar_link_color',
+        array(
+            'label' => 'Top Bar Link/Text Color',
+            'section' => 'gh_top_bar_section',
+            'settings' => 'gh_set_top_bar_link_color'
+        )
+    ));
+
+
 }
