@@ -77,6 +77,24 @@ function gh_customizer($wp_customize)
     ));
 
 
+    /*
+     * Setting: Header Scroll
+     */
+    $wp_customize->add_setting('gh_set_header_resize', array(
+        'default' => 0
+    ));
+
+    $wp_customize->add_control('gh_cont_header_resize', array(
+        'label' => 'Resize Header when Scroll',
+        'section' => 'gh_header_type_section',
+        'settings' => 'gh_set_header_resize',
+        'type' => 'radio',
+        'choices' => array(
+            1 => 'enabled',
+            0 => 'disabled'
+        )
+    ));
+
 
 
     /* ========
@@ -88,19 +106,23 @@ function gh_customizer($wp_customize)
                 'priority' => 10
     ));
 
+
     /*
-     * Setting: Header Font Size
+     * Setting: Header Transparency
      */
-    $wp_customize->add_setting('gh_set_header_font_size', array(
-        'default' => 14,
-        'transport' => 'postMessage'
+    $wp_customize->add_setting('gh_set_header_transparency', array(
+        'default' => 0
     ));
 
-    $wp_customize->add_control('gh_cont_header_font_size', array(
-        'label' => 'Set Font Size (px)',
+    $wp_customize->add_control('gh_cont_header_transparency', array(
+        'label' => 'Make Header Transparent',
         'section' => 'gh_header_styles_section',
-        'settings' => 'gh_set_header_font_size',
-        'type' => 'text'
+        'settings' => 'gh_set_header_transparency',
+        'type' => 'radio',
+        'choices' => array(
+            1 => 'enable',
+            0 => 'disable'
+        )
     ));
 
 
@@ -121,6 +143,21 @@ function gh_customizer($wp_customize)
             'section' => 'gh_header_styles_section',
             'settings' => 'gh_set_header_bg_color'
         )
+    ));
+
+    /*
+     * Setting: Header Font Size
+     */
+    $wp_customize->add_setting('gh_set_header_font_size', array(
+        'default' => 14,
+        'transport' => 'postMessage'
+    ));
+
+    $wp_customize->add_control('gh_cont_header_font_size', array(
+        'label' => 'Set Font Size (px)',
+        'section' => 'gh_header_styles_section',
+        'settings' => 'gh_set_header_font_size',
+        'type' => 'text'
     ));
 
 

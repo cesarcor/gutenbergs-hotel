@@ -33,18 +33,64 @@ function gh_custom_header_styles(){
 
     <?php if(get_theme_mod( 'gh_set_header_scroll' ) == 1): ?>
 
+       #masthead, .top-bar{
+         position: fixed;
+         z-index: 100;
+       }
+
+       #masthead{
+         top: 28px;
+       }
+
+     <?php pushMain(); ?>
+
+    <?php endif; ?>
+
+    <?php if(get_theme_mod( 'gh_set_header_transparency' ) == 1): ?>
+
      #masthead{
-       position: fixed;
        z-index: 100;
+       background-color: transparent;
      }
 
-     main{
-       padding-top: 88px;
-     }
+     <?php pushDownHeader(); ?>
 
     <?php endif; ?>
 
   </style>
 
 <?php
+}
+?>
+
+
+<?php if(get_theme_mod( 'gh_set_header_resize' ) == 1): ?>
+
+  <script>
+
+  /*
+   * Make header smaller on Scroll
+   */
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+
+    let headerContainer = document.querySelector('#masthead .container');
+
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      headerContainer.style.padding = "10px 0";
+      headerContainer.style.transition = ".3s ease all";
+    } else {
+      headerContainer.style.padding = "20px 0";
+    }
+  }
+
+  </script>
+
+<?php endif; ?>
+
+
+<?php
+function pushMain(){
+  echo 'main{ padding-top: 88px; }';
 }
