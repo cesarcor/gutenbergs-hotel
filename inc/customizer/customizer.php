@@ -4,15 +4,6 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-//putting this here for now!
-// class gh_cont_radio extends WP_Customize_Control{
-//
-// render(){
-//
-// }
-//
-// }
-
 add_action('customize_register', 'gh_customizer');
 
 function gh_customizer($wp_customize)
@@ -42,7 +33,7 @@ function gh_customizer($wp_customize)
      * Setting: Header Type
      */
     $wp_customize->add_setting('gh_set_header_type', array(
-            'default' => 'distributed'
+            'default' => 'traditional'
     ));
 
     $wp_customize->add_control('gh_cont_header_type', array(
@@ -145,21 +136,6 @@ function gh_customizer($wp_customize)
         )
     ));
 
-    /*
-     * Setting: Header Font Size
-     */
-    $wp_customize->add_setting('gh_set_header_font_size', array(
-        'default' => 14,
-        'transport' => 'postMessage'
-    ));
-
-    $wp_customize->add_control('gh_cont_header_font_size', array(
-        'label' => 'Set Font Size (px)',
-        'section' => 'gh_header_styles_section',
-        'settings' => 'gh_set_header_font_size',
-        'type' => 'text'
-    ));
-
 
 		/*
 		 * Setting: Header Text Color
@@ -180,6 +156,40 @@ function gh_customizer($wp_customize)
 				)
 		));
 
+
+    /*
+     * Setting: Header Font Size
+     */
+    $wp_customize->add_setting('gh_set_header_font_size', array(
+        'default' => 14
+    ));
+
+    $wp_customize->add_control('gh_cont_header_font_size', array(
+        'label' => 'Set Font Size (px)',
+        'section' => 'gh_header_styles_section',
+        'settings' => 'gh_set_header_font_size',
+        'type' => 'text'
+    ));
+
+    /* ========
+     * Header Responsive Section
+     ========== */
+    $wp_customize->add_section('gh_header_responsive_section', array(
+                'title' => 'Responsive Options',
+                'panel' => 'gh_panel_header',
+                'priority' => 10
+    ));
+
+    $wp_customize->add_setting('gh_set_header_mob_text_size', array(
+                'default' => 30
+    ));
+
+    $wp_customize->add_control('gh_cont_header_mob_text_size', array(
+        'label' => 'Set Mobile Font Size (px)',
+        'section' => 'gh_header_responsive_section',
+        'settings' => 'gh_set_header_mob_text_size',
+        'type' => 'text'
+    ));
 
     /* ========
      * Top Bar Section
@@ -231,7 +241,7 @@ function gh_customizer($wp_customize)
     /*
      * Setting: Top Bar Link color
      */
-    $wp_customize->add_setting('gh_set_top_bar_link_color', array(
+    $wp_customize->add_setting('gh_set_top_bar_text_color', array(
             'default' => 'C8553D',
             'transport' => 'postMessage'
     ));
@@ -240,11 +250,27 @@ function gh_customizer($wp_customize)
         $wp_customize,
         'gh_cont_top_bar_link_color',
         array(
-            'label' => 'Top Bar Link/Text Color',
+            'label' => 'Top Bar Text Color',
             'section' => 'gh_top_bar_section',
-            'settings' => 'gh_set_top_bar_link_color'
+            'settings' => 'gh_set_top_bar_text_color'
         )
     ));
+
+
+   /*
+    * Setting: Top bar text size
+    */
+   $wp_customize->add_setting('gh_set_top_bar_text_size', array(
+       'default' => 12
+   ));
+
+   $wp_customize->add_control('gh_cont_top_bar_text_size', array(
+       'label' => 'Set Font Size (px)',
+       'section' => 'gh_top_bar_section',
+       'settings' => 'gh_set_top_bar_text_size',
+       'type' => 'text'
+   ));
+
 
 
 }

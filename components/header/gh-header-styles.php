@@ -6,12 +6,14 @@ function gh_custom_header_styles(){
 
   <style type="text/css">
 
+     /* TOP BAR STYLES */
     .top-bar{
       background-color: <?php echo get_theme_mod( 'gh_set_top_bar_color' ); ?>
     }
 
     .top-bar ul li a{
-      color: <?php echo get_theme_mod( 'gh_set_top_bar_link_color' ); ?>
+      color: <?php echo get_theme_mod( 'gh_set_top_bar_text_color' ); ?>;
+      font-size: <?php echo get_theme_mod( 'gh_set_top_bar_text_size' ); ?>;
     }
 
     .main-nav a,
@@ -29,6 +31,9 @@ function gh_custom_header_styles(){
       font-size: <?php echo get_theme_mod( 'gh_set_header_font_size' ) . 'px'; ?>
     }
 
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner:after,
+    .hamburger.is-active .hamburger-inner:before,
     .hamburger-inner,
     .hamburger-inner::before,
     .hamburger-inner::after{
@@ -46,7 +51,7 @@ function gh_custom_header_styles(){
          top: 28px;
        }
 
-     <?php pushMain(); ?>
+       /* main{ padding-top: 88px; } */
 
     <?php endif; ?>
 
@@ -55,9 +60,10 @@ function gh_custom_header_styles(){
      #masthead{
        z-index: 100;
        background-color: transparent;
+       box-shadow: none;
      }
 
-     <?php pushDownHeader(); ?>
+     <?php //pushDownHeader(); ?>
 
     <?php endif; ?>
 
@@ -66,7 +72,6 @@ function gh_custom_header_styles(){
 <?php
 }
 ?>
-
 
 <?php if(get_theme_mod( 'gh_set_header_resize' ) == 1): ?>
 
@@ -92,9 +97,3 @@ function gh_custom_header_styles(){
   </script>
 
 <?php endif; ?>
-
-
-<?php
-function pushMain(){
-  echo 'main{ padding-top: 88px; }';
-}

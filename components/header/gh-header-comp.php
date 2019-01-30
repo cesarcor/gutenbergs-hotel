@@ -34,8 +34,10 @@ function gh_nav_menu(){
 
 }
 
+
 function gh_header_type($headerType) {
-    echo '<header id="masthead" class="site-header header-' . $headerType . '">';
+
+    echo '<header id="masthead" class="site-header header-' . ($headerType == '' ? 'traditional' : $headerType) . '">';
       echo '<div class="container">';
 
         switch ($headerType) {
@@ -67,9 +69,7 @@ function gh_header_type($headerType) {
 
 function gh_header_traditional() {
 
-  echo '<div class="site-logo">';
-    the_custom_logo();
-  echo '</div>';
+  require_once('gh-header-branding.php');
 
   echo '<div class="main-nav push-to-right">
 
@@ -97,9 +97,7 @@ function gh_header_traditional() {
 
 function gh_header_centered() {
 
-  echo '<div class="site-logo">';
-    the_custom_logo();
-  echo '</div>';
+  require_once('gh-header-branding.php');
 
   echo '<div class="main-nav">
 
@@ -139,9 +137,7 @@ function gh_header_distributed() {
 
   echo '</div>';
 
-  echo '<div class="site-logo">';
-    the_custom_logo();
-  echo '</div>';
+  require_once('gh-header-branding.php');
 
   echo '<div class="main-nav header-distributed__right">
 
@@ -168,9 +164,7 @@ function gh_header_distributed() {
 
 function gh_header_burger() {
 
-  echo '<div class="site-logo">';
-    the_custom_logo();
-  echo '</div>';
+  require_once('gh-header-branding.php');
 
   echo '<div class="main-nav push-to-right">
 
