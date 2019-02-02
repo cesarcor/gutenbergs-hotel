@@ -1,22 +1,6 @@
 <?php
 
-function gh_top_bar(){
-
-  echo '<div class="top-bar">
-    <div class="top-bar__contain push-to-right">';
-
-        wp_nav_menu(
-          array(
-            'theme_location' => 'top-bar-menu',
-            'container' => 'div',
-            'container_class' => 'inline-list'
-          )
-        );
-
-    echo '</div>
-  </div>';
-
-}
+require_once('parts/top-bar.php');
 
 function gh_nav_menu(){
 
@@ -69,17 +53,11 @@ function gh_header_type($headerType) {
 
 function gh_header_traditional() {
 
-  require_once('gh-header-branding.php');
+  require_once('parts/header-branding.php');
 
-  echo '<div class="main-nav push-to-right">
+  echo '<div class="main-nav push-to-right">';
 
-    <div class="mobile-nav-btn">
-      <button class="hamburger hamburger--squeeze" type="button">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-    </div>';
+  require_once('parts/burger-menu.php');
 
       wp_nav_menu(
         array(
@@ -97,17 +75,12 @@ function gh_header_traditional() {
 
 function gh_header_centered() {
 
-  require_once('gh-header-branding.php');
+  require_once('parts/header-branding.php');
 
-  echo '<div class="main-nav">
+  echo '<div class="main-nav">';
 
-    <div class="mobile-nav-btn">
-      <button class="hamburger hamburger--squeeze" type="button">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-    </div>';
+  require_once('parts/burger-menu.php');
+
 
       wp_nav_menu(
         array(
@@ -137,17 +110,13 @@ function gh_header_distributed() {
 
   echo '</div>';
 
-  require_once('gh-header-branding.php');
+  require_once('parts/header-branding.php');
 
-  echo '<div class="main-nav header-distributed__right">
 
-    <div class="mobile-nav-btn">
-      <button class="hamburger hamburger--squeeze" type="button">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-    </div>';
+  echo '<div class="main-nav header-distributed__right">';
+
+  require_once('parts/burger-menu.php');
+
 
       wp_nav_menu(
         array(
@@ -164,7 +133,7 @@ function gh_header_distributed() {
 
 function gh_header_burger() {
 
-  require_once('gh-header-branding.php');
+  require_once('parts/header-branding.php');
 
   echo '<div class="main-nav push-to-right">
 
@@ -175,15 +144,6 @@ function gh_header_burger() {
         </span>
       </button>
     </div>';
-
-      // wp_nav_menu(
-      //   array(
-      //     'theme_location' => 'header-menu',
-      //     'container' => 'nav',
-      //     'container_id' => 'desk_nav',
-      //     'container_class' => 'inline-list'
-      //   )
-      // );
 
   echo '</div>';
 
