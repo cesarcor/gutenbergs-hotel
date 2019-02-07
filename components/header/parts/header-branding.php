@@ -7,7 +7,11 @@
 
     else:
 
-      echo "<a href='" . home_url( '/' ) .  "'><h1>" . bloginfo( 'name' ) . "</h1></a>";
+      echo "<h1><a href='" . home_url( '/' ) .  "'>";
+
+        bloginfo( 'name' );
+
+      echo "</a></h1>";
 
     endif;
 
