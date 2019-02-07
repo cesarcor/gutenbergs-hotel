@@ -40,10 +40,6 @@ input, button {
   position: fixed;
   z-index: 100; }
 
-.inline-list ul li {
-  display: inline;
-  padding: 0 15px; }
-
 .push-to-right {
   display: flex;
   align-items: center;
@@ -116,6 +112,10 @@ Distributed Header
 /* ====================
 Nav Panel
 ===================== */
+#desk_nav ul li {
+  display: inline;
+  padding: 0 15px; }
+
 .nav-panel,
 .nav-panel > * {
   display: none; }
@@ -144,6 +144,17 @@ Nav Panel
   z-index: 1000; }
   .mobile-nav-btn button {
     font-size: 25px; }
+
+/* ====================
+Sub Menu
+===================== */
+#desk_nav .menu .sub-menu {
+  background-color: #FFF;
+  position: absolute;
+  z-index: 10; }
+  #desk_nav .menu .sub-menu li {
+    display: block;
+    margin: 15px 0; }
 
 /* -- RESPONSIVE FIXES --*/
 @media (max-width: 720px) {
