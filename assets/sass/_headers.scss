@@ -103,6 +103,7 @@ Distributed Header
 Nav Panel
 ===================== */
 
+.menu ul li,
 #desk_nav ul li{
   display: inline;
   padding: 0 15px;
@@ -154,13 +155,37 @@ Nav Panel
 Sub Menu
 ===================== */
 
-#desk_nav .menu .sub-menu{
-  background-color: #FFF;
-  position: absolute;
-  z-index: 10;
+#desk_nav{
 
-  li{
-    display: block;
-    margin: 15px 0;
+  .menu{
+
+     li{
+       &:hover{
+         .sub-menu{
+           display: block;
+         }
+       }
+     }
+
+    .sub-menu{
+      background-color: #FFF;
+      position: absolute;
+      z-index: 10;
+      display: none;
+      padding-top: 15px;
+
+      li{
+        display: block;
+        margin: 15px 0;
+      }
+
+      &:hover{
+        .sub-menu{
+          display: block;
+        }
+      }
+
+    }
   }
+
 }

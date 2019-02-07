@@ -112,6 +112,7 @@ Distributed Header
 /* ====================
 Nav Panel
 ===================== */
+.menu ul li,
 #desk_nav ul li {
   display: inline;
   padding: 0 15px; }
@@ -148,13 +149,19 @@ Nav Panel
 /* ====================
 Sub Menu
 ===================== */
+#desk_nav .menu li:hover .sub-menu {
+  display: block; }
 #desk_nav .menu .sub-menu {
   background-color: #FFF;
   position: absolute;
-  z-index: 10; }
+  z-index: 10;
+  display: none;
+  padding-top: 15px; }
   #desk_nav .menu .sub-menu li {
     display: block;
     margin: 15px 0; }
+  #desk_nav .menu .sub-menu:hover .sub-menu {
+    display: block; }
 
 /* -- RESPONSIVE FIXES --*/
 @media (max-width: 720px) {
