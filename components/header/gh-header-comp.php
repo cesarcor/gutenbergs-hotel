@@ -63,9 +63,8 @@ function gh_header_traditional() {
         array(
           'theme_location' => 'header-menu',
           'container' => 'nav',
-          'container_id' => 'desk_nav',
-          'container_class' => 'inline-list'
-        )
+          'container_id' => 'desk_nav'
+          )
       );
 
   echo '</div>';
@@ -87,7 +86,6 @@ function gh_header_centered() {
           'theme_location' => 'header-menu',
           'container' => 'nav',
           'container_id' => 'desk_nav',
-          'container_class' => 'inline-list'
         )
       );
 
@@ -103,8 +101,7 @@ function gh_header_distributed() {
         array(
           'theme_location' => 'distributed-left',
           'container' => 'nav',
-          'container_id' => 'left-nav',
-          'container_class' => 'inline-list'
+          'container_id' => 'left-nav'
         )
       );
 
@@ -122,8 +119,7 @@ function gh_header_distributed() {
         array(
           'theme_location' => 'header-menu',
           'container' => 'nav',
-          'container_id' => 'desk_nav',
-          'container_class' => 'inline-list'
+          'container_id' => 'desk_nav'
         )
       );
 

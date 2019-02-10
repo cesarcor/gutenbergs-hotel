@@ -27,7 +27,7 @@ function gh_custom_header_styles(){
       background-color: <?php echo get_theme_mod( 'gh_set_header_bg_color' ); ?>
     }
 
-    .site-header nav ul li a{
+    .site-header nav ul:not(.sub-menu) li a{
       font-size: <?php echo get_theme_mod( 'gh_set_header_font_size' ) . 'px'; ?>
     }
 

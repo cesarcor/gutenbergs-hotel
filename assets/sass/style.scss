@@ -29,8 +29,13 @@ tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
 }
 
+html, body {
+  height: 100%;
+}
+
 body{
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: auto;
 }
 
 a{

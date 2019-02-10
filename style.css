@@ -27,8 +27,12 @@ tbody, tfoot, thead, tr, th, td {
   padding: 0;
   vertical-align: baseline; }
 
+html, body {
+  height: 100%; }
+
 body {
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: auto; }
 
 a {
   text-decoration: none; }
@@ -60,7 +64,6 @@ Top Bar
 
 #masthead {
   width: 100%;
-  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
   position: relative;
   transition: 0.3s ease all; }
 
@@ -112,28 +115,41 @@ Distributed Header
 /* ====================
 Nav Panel
 ===================== */
+#desk_nav ul li {
+  position: relative; }
+
 .menu ul li,
 #desk_nav ul li {
   display: inline;
   padding: 0 15px; }
+  .menu ul li a,
+  #desk_nav ul li a {
+    font-weight: 200; }
+    .menu ul li a:active, .menu ul li a:hover,
+    #desk_nav ul li a:active,
+    #desk_nav ul li a:hover {
+      color: #C8553D; }
 
 .nav-panel,
 .nav-panel > * {
   display: none; }
 
 .nav-panel {
-  position: absolute;
+  position: fixed;
   background-color: #FFF;
+  top: 70px;
+  right: 0;
+  left: 0;
+  bottom: 0;
   width: 100%;
-  z-index: 100;
-  padding-bottom: 100%; }
-  .nav-panel ul li {
-    text-align: center;
-    margin: 40px 0; }
-
-.active-menu,
-.active-menu > * {
-  display: block; }
+  height: 100%;
+  z-index: 100; }
+  .nav-panel #navigation-contain {
+    height: 100%;
+    overflow: scroll; }
+    .nav-panel #navigation-contain ul li {
+      text-align: center;
+      margin: 40px 0; }
 
 .hamburger .hamburger-inner,
 .hamburger .hamburger-inner::before,
@@ -154,14 +170,26 @@ Sub Menu
 #desk_nav .menu .sub-menu {
   background-color: #FFF;
   position: absolute;
+  left: 0;
+  right: 0;
   z-index: 10;
   display: none;
-  padding-top: 15px; }
+  box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.2); }
   #desk_nav .menu .sub-menu li {
     display: block;
     margin: 15px 0; }
   #desk_nav .menu .sub-menu:hover .sub-menu {
     display: block; }
+
+/* ====================
+  State Modifiers
+===================== */
+.fixedPosition {
+  position: fixed; }
+
+.active-menu,
+.active-menu > * {
+  display: block; }
 
 /* -- RESPONSIVE FIXES --*/
 @media (max-width: 720px) {
@@ -173,8 +201,8 @@ Sub Menu
 
   .header-centered .container {
     grid-template-columns: 20% 1fr; }
-    .header-centered .container .site-logo,
-    .header-centered .container .main-nav {
+    .header-centered .container .main-nav,
+    .header-centered .container .site-logo {
       display: flex; }
     .header-centered .container .site-logo {
       margin-bottom: 0;
@@ -192,6 +220,11 @@ Sub Menu
     padding-left: 10%; }
   .header-distributed__right {
     justify-content: flex-end;
-    padding-right: 10%; } }
+    padding-right: 10%; }
+
+  .menu li a {
+    font-size: 24px; }
+  .menu .sub-menu li {
+    display: block; } }
 
 /*# sourceMappingURL=style.css.map */
