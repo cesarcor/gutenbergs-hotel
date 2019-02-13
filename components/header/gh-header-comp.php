@@ -63,8 +63,9 @@ function gh_header_traditional() {
         array(
           'theme_location' => 'header-menu',
           'container' => 'nav',
-          'container_id' => 'desk_nav'
-          )
+          'container_id' => 'desk_nav',
+          'walker' => new GH_Walker()
+        )
       );
 
   echo '</div>';
