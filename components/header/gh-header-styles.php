@@ -1,34 +1,35 @@
 <?php
 
-add_action( 'wp_head', 'gh_custom_header_styles' );
-function gh_custom_header_styles(){
-?>
+add_action('wp_head', 'gh_custom_header_styles');
+function gh_custom_header_styles()
+{
+    ?>
 
   <style type="text/css">
 
      /* TOP BAR STYLES */
     .top-bar{
-      background-color: <?php echo get_theme_mod( 'gh_set_top_bar_color' ); ?>
+      background-color: <?php echo get_theme_mod('gh_set_top_bar_color'); ?>
     }
 
     .top-bar ul li a{
-      color: <?php echo get_theme_mod( 'gh_set_top_bar_text_color' ); ?>;
-      font-size: <?php echo get_theme_mod( 'gh_set_top_bar_text_size' ); ?>;
+      color: <?php echo '#' . get_theme_mod('gh_set_top_bar_text_color'); ?>;
+      font-size: <?php echo get_theme_mod('gh_set_top_bar_text_size') . 'px'; ?>;
     }
 
     .main-nav a,
     .nav-panel a,
     #left-nav a{
-      color: <?php echo get_theme_mod( 'gh_set_header_text_color' ); ?>
+      color: <?php echo get_theme_mod('gh_set_header_text_color'); ?>
     }
 
     .site-header,
     .nav-panel{
-      background-color: <?php echo get_theme_mod( 'gh_set_header_bg_color' ); ?>
+      background-color: <?php echo get_theme_mod('gh_set_header_bg_color'); ?>
     }
 
     .site-header nav ul:not(.sub-menu) li a{
-      font-size: <?php echo get_theme_mod( 'gh_set_header_font_size' ) . 'px'; ?>
+      font-size: <?php echo get_theme_mod('gh_set_header_font_size') . 'px'; ?>
     }
 
     .hamburger.is-active .hamburger-inner,
@@ -37,10 +38,11 @@ function gh_custom_header_styles(){
     .hamburger-inner,
     .hamburger-inner::before,
     .hamburger-inner::after{
-      background-color: <?php echo get_theme_mod( 'gh_set_header_text_color' ); ?>
+      background-color: <?php echo get_theme_mod('gh_set_header_text_color'); ?>
     }
 
-    <?php if(get_theme_mod( 'gh_set_header_scroll' ) == 1): ?>
+    <?php if (get_theme_mod('gh_set_header_scroll') == 1 &&
+             get_theme_mod('gh_set_top_bar') == 1): ?>
 
        #masthead, .top-bar{
          position: fixed;
@@ -51,19 +53,15 @@ function gh_custom_header_styles(){
          top: 28px;
        }
 
-       /* main{ padding-top: 88px; } */
-
     <?php endif; ?>
 
-    <?php if(get_theme_mod( 'gh_set_header_transparency' ) == 1): ?>
+    <?php if (get_theme_mod('gh_set_header_transparency') == 1): ?>
 
      #masthead{
        z-index: 100;
        background-color: transparent;
        box-shadow: none;
      }
-
-     <?php //pushDownHeader(); ?>
 
     <?php endif; ?>
 
@@ -73,27 +71,38 @@ function gh_custom_header_styles(){
 }
 ?>
 
-<?php if(get_theme_mod( 'gh_set_header_resize' ) == 1): ?>
+<?php if (get_theme_mod('gh_set_header_resize') == 1): ?>
 
-  <script>
+  <?php
+    function custom_header_js()
+    {
+  ?>
 
-  /*
-   * Make header smaller on Scroll
-   */
-  window.onscroll = function() {scrollFunction()};
+    <script>
 
-  function scrollFunction() {
+    window.onscroll = function() {ghScrollFunction()};
 
-    let headerContainer = document.querySelector('#masthead .container');
+    function ghScrollFunction() {
 
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      headerContainer.style.padding = "10px 0";
-      headerContainer.style.transition = ".3s ease all";
-    } else {
-      headerContainer.style.padding = "20px 0";
+      let headerContainer = document.querySelector('#masthead .container');
+      let headerLogo = document.querySelector('.site-logo a img');
+
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+          headerLogo.style.height = '33px';
+          headerLogo.style.transition = '.3s ease height';
+          headerContainer.style.transition = ".3s ease all";
+      } else {
+          headerLogo.style.height = '45px';
+      }
+
     }
-  }
 
-  </script>
+    </script>
+
+
+  <?php
+    }
+    add_action('wp_footer', 'custom_header_js');
+   ?>
 
 <?php endif; ?>
