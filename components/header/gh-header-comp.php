@@ -5,15 +5,16 @@ require_once('parts/top-bar.php');
 function gh_nav_menu(){
 
   echo '<div class="nav-panel">';
+  echo '<nav id="navigation-contain" role="navigation">';
 
       wp_nav_menu(
         array(
           'theme_location' => 'header-menu',
-          'container' => 'nav',
-          'container_id' => 'navigation-contain'
+          'container' => false
         )
       );
 
+   echo '</nav>';
   echo '</div>';
 
 }
@@ -87,6 +88,7 @@ function gh_header_centered() {
           'theme_location' => 'header-menu',
           'container' => 'nav',
           'container_id' => 'desk_nav',
+          'walker' => new GH_Walker()
         )
       );
 
@@ -102,7 +104,8 @@ function gh_header_distributed() {
         array(
           'theme_location' => 'distributed-left',
           'container' => 'nav',
-          'container_id' => 'left-nav'
+          'container_id' => 'left-nav',
+          'walker' => new GH_Walker()
         )
       );
 
@@ -120,7 +123,8 @@ function gh_header_distributed() {
         array(
           'theme_location' => 'header-menu',
           'container' => 'nav',
-          'container_id' => 'desk_nav'
+          'container_id' => 'desk_nav',
+          'walker' => new GH_Walker()
         )
       );
 
