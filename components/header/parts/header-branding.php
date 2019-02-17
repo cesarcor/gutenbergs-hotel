@@ -1,4 +1,4 @@
-<div class="site-logo">
+<div class="site-logo center-flex">
   <?php
 
     if( has_custom_logo() ):
