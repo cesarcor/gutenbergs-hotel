@@ -10,7 +10,8 @@
     }
   }
 
-  #desk_nav {
+  #desk_nav,
+  nav.menu {
     display: none;
   }
 
@@ -67,6 +68,12 @@
         display: block;
       }
     }
+  }
+
+
+  .header-traditional .container,
+  .header-burger .container {
+    grid-template-columns: 50% 1fr;
   }
 
 

@@ -16,7 +16,7 @@ Top Bar
 
 .container {
   display: grid;
-  padding: 5px 0;
+  padding: 10px 0;
 
   .site-logo {
     text-align: center;
@@ -25,6 +25,12 @@ Top Bar
       img {
         max-height: 45px;
         width: auto;
+      }
+    }
+
+    h1{
+      a{
+        color: $mainOrange;
       }
     }
   }
@@ -45,7 +51,8 @@ Traditional Header
     grid-template-columns: 20% 1fr;
   }
 
-  #desk_nav{
+  #desk_nav,
+  nav.menu{
     position: relative;
     right: 5%;
   }
@@ -246,6 +253,25 @@ Sub Menu
   }
 
 }
+
+.fixed{
+  position: fixed;
+  z-index: 100;
+}
+
+.push-to-right{
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  #navigation-contain, div{
+    float: right;
+    margin-right: 10%;
+  }
+
+}
+
 
 /* ====================
   State Modifiers
