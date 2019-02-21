@@ -11,6 +11,12 @@ License URI: LICENSE
 Text Domain: gutenbergs-hotel
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
+/*------------------------------------*
+	Variables
+*------------------------------------*/
+/*------------------------------------*
+	Resets & Defaults
+*------------------------------------*/
 html, body, div, span, applet, object, iframe, h1,
 h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
 address, big, cite, code, del, dfn, em, font, ins, kbd, q, s,
@@ -40,20 +46,9 @@ a {
 input, button {
   outline: none; }
 
-.fixed {
-  position: fixed;
-  z-index: 100; }
-
-.push-to-right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; }
-  .push-to-right #navigation-contain, .push-to-right div {
-    float: right;
-    margin-right: 10%; }
-
-/* -- Menu Variations -- */
-/* -- HEADER --*/
+/*------------------------------------*
+	Headers
+*------------------------------------*/
 /* ====================
 Top Bar
 ===================== */
@@ -75,6 +70,8 @@ Top Bar
     .container .site-logo .custom-logo-link img {
       max-height: 45px;
       width: auto; }
+    .container .site-logo h1 a {
+      color: #C8553D; }
   .container .main-nav {
     position: relative; }
 
@@ -85,7 +82,9 @@ Traditional Header
 .header-burger .container {
   grid-template-columns: 20% 1fr; }
 .header-traditional #desk_nav,
-.header-burger #desk_nav {
+.header-traditional nav.menu,
+.header-burger #desk_nav,
+.header-burger nav.menu {
   position: relative;
   right: 5%; }
 
@@ -217,6 +216,18 @@ Sub Menu
       border-width: 0 10px 10px;
       border-color: transparent transparent #fff; }
 
+.fixed {
+  position: fixed;
+  z-index: 100; }
+
+.push-to-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+  .push-to-right #navigation-contain, .push-to-right div {
+    float: right;
+    margin-right: 10%; }
+
 /* ====================
   State Modifiers
 ===================== */
@@ -232,12 +243,15 @@ Sub Menu
   align-items: center;
   display: flex; }
 
-/* -- RESPONSIVE FIXES --*/
+/*------------------------------------*
+	Responsive Fixes
+*------------------------------------*/
 @media (max-width: 720px) {
   #masthead .container .main-nav .mobile-nav-btn {
     display: inline-block; }
 
-  #desk_nav {
+  #desk_nav,
+  nav.menu {
     display: none; }
 
   .header-centered .container {
@@ -266,6 +280,10 @@ Sub Menu
   .menu li a {
     font-size: 24px; }
   .menu .sub-menu li {
-    display: block; } }
+    display: block; }
+
+  .header-traditional .container,
+  .header-burger .container {
+    grid-template-columns: 50% 1fr; } }
 
 /*# sourceMappingURL=style.css.map */
