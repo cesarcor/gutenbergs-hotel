@@ -10,7 +10,6 @@ Top Bar
 
 #masthead {
   width: 100%;
-  // box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
   position: relative;
   transition: 0.3s ease all;
 }
@@ -103,7 +102,8 @@ Distributed Header
 Nav Panel
 ===================== */
 
-#desk_nav{
+#desk_nav,
+#left-nav{
   ul{
     li{
       position: relative;
@@ -112,7 +112,8 @@ Nav Panel
 }
 
 .menu ul li,
-#desk_nav ul li{
+#desk_nav ul li,
+#left-nav ul li{
   display: inline;
   padding: 0 15px;
 
@@ -121,7 +122,7 @@ Nav Panel
 
     &:active,
     &:hover{
-      color: #C8553D;
+      color: $secondaryOrange;
     }
   }
 
@@ -135,7 +136,7 @@ Nav Panel
 .nav-panel{
   position: fixed;
   background-color: #FFF;
-  top: 70px;
+  top: 67px;
   right: 0;
   left: 0;
   bottom: 0;
@@ -177,55 +178,71 @@ Nav Panel
 Sub Menu
 ===================== */
 
-#desk_nav{
+#desk_nav,
+#left-nav{
 
   .menu{
 
      li{
        &:hover{
-         .sub-menu{
+         .menu-dropdown-container{
            display: block;
+           opacity: 1;
+           transition: opacity 0.4s ease;
          }
        }
      }
 
-    .sub-menu{
-      background-color: #FFF;
-      position: absolute;
-      top: 50px;
-      left: 0;
-      right: 0;
-      min-width: 150px;
-      width: auto;
-      z-index: 10;
-      display: none;
-      box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.2);
+   .menu-dropdown-container{
+     display: none;
+     opacity: 0;
+     position: absolute;
+     top: 16px;
+     left: 0;
+     right: 0;
+     min-width: 150px;
+     width: auto;
+     z-index: 10;
+     transition: opacity 0.8s ease;
 
-      li{
-        display: block;
-        margin: 15px 0;
-      }
+     &:hover{
+         display: block;
+         opacity: 1;
+         transition: opacity 0.4s ease;
+     }
 
-      &:hover{
-        .sub-menu{
-          display: block;
-        }
-      }
+     .sub-menu{
+       position: relative;
+       top: 15px;
+       background-color: #FFF;
+       box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.2);
 
-      &::before{
-        content: " ";
-        display: block;
-        position: absolute;
-        bottom: 100%;
-        left: 15%;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 10px 10px;
-        border-color: transparent transparent #fff;
-      }
+       display: table;
+       top: 32px;
 
-    }
+       li{
+         display: block;
+         margin: 15px 0;
+       }
+
+       &::before{
+         content: " ";
+         display: block;
+         position: absolute;
+         left: 15%;
+         top: -10px;
+         width: 0;
+         height: 0;
+         border-style: solid;
+         border-width: 0 10px 10px;
+         border-color: transparent transparent #fff;
+       }
+
+     }
+
+   }
+
+
   }
 
 }
@@ -241,4 +258,10 @@ Sub Menu
 .active-menu,
 .active-menu > *{
   display: block;
+}
+
+.center-flex{
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
