@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Render Top Bar if needed
+ */
 require_once('parts/top-bar.php');
 
 function gh_nav_menu(){
@@ -19,7 +22,9 @@ function gh_nav_menu(){
 
 }
 
-
+/**
+ * Render header based on type
+ */
 function gh_header_type($headerType) {
 
     echo '<header id="masthead" class="site-header header-' . ($headerType == '' ? 'traditional' : $headerType) . '">';
@@ -59,15 +64,7 @@ function gh_header_traditional() {
   echo '<div class="main-nav push-to-right">';
 
   require_once('parts/burger-menu.php');
-
-      wp_nav_menu(
-        array(
-          'theme_location' => 'header-menu',
-          'container' => 'nav',
-          'container_id' => 'desk_nav',
-          'walker' => new GH_Walker()
-        )
-      );
+  require_once('parts/menu-list.php');
 
   echo '</div>';
 
@@ -81,16 +78,7 @@ function gh_header_centered() {
   echo '<div class="main-nav">';
 
   require_once('parts/burger-menu.php');
-
-
-      wp_nav_menu(
-        array(
-          'theme_location' => 'header-menu',
-          'container' => 'nav',
-          'container_id' => 'desk_nav',
-          'walker' => new GH_Walker()
-        )
-      );
+  require_once('parts/menu-list.php');
 
   echo '</div>';
 
@@ -116,17 +104,8 @@ function gh_header_distributed() {
 
   echo '<div class="main-nav header-distributed__right">';
 
-  require_once('parts/burger-menu.php');
-
-
-      wp_nav_menu(
-        array(
-          'theme_location' => 'header-menu',
-          'container' => 'nav',
-          'container_id' => 'desk_nav',
-          'walker' => new GH_Walker()
-        )
-      );
+    require_once('parts/burger-menu.php');
+    require_once('parts/menu-list.php');
 
   echo '</div>';
 
