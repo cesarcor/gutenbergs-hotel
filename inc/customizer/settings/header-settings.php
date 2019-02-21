@@ -226,7 +226,7 @@ class GH_Header_Settings
          * Setting: Top Bar Background Color
          */
         $wp_customize->add_setting('gh_set_top_bar_color', array(
-              'default' => 'C8553D',
+              'default' => get_theme_mod('gh_set_header_text_color'),
               'transport' => 'postMessage'
       ));
 
