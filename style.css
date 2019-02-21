@@ -1,8 +1,8 @@
 /*
 Theme Name: Gutenberg's Hotel
-Theme URI: https://github.com/cesarcdowns/gutenbergs-hotel
+Theme URI: https://github.com/cesarcor/gutenbergs-hotel
 Author: Cesar Correchel
-Author URI: https://wordpress.org/
+Author URI: https://github.com/cesarcor
 Description: Gutenberg Theme for Hotels
 Requires at least: WordPress 5.0
 Version: 0.1
@@ -69,7 +69,7 @@ Top Bar
 
 .container {
   display: grid;
-  padding: 5px 0; }
+  padding: 10px 0; }
   .container .site-logo {
     text-align: center; }
     .container .site-logo .custom-logo-link img {
