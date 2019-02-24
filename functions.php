@@ -48,9 +48,9 @@ function gh_register_navs()
 {
     register_nav_menus(
     array(
-      'top-bar-menu' => esc_html__('Header Top Bar Menu', 'gutenbergs-hotel'),
-      'header-menu' => esc_html__('Header Menu', 'gutenbergs-hotel'),
-      'footer-menu' => esc_html__('Footer Menu', 'gutenbergs-hotel')
+      'top-bar-menu'  => esc_html__('Header Top Bar Menu', 'gutenbergs-hotel'),
+      'header-menu'   => esc_html__('Header Menu', 'gutenbergs-hotel'),
+      'footer-menu'   => esc_html__('Footer Menu', 'gutenbergs-hotel')
     )
   );
 }
@@ -65,7 +65,7 @@ if(get_theme_mod( 'gh_set_header_type' ) == 'distributed'){
 
 
 /**
- * Add support for custom logo.
+ * Add support for Custom Logo.
  *
  * @link https://codex.wordpress.org/Theme_Logo
  **/
@@ -73,12 +73,40 @@ if(get_theme_mod( 'gh_set_header_type' ) == 'distributed'){
 add_theme_support(
   'custom-logo',
    array(
-     'width' => 50,
-    'height' => 50,
-    'flex-width' => true,
+    'width'       => 50,
+    'height'      => 50,
+    'flex-width'  => true,
     'flex-height' => true
 )
 );
 
-require_once(GH_THEME_DIR . '/inc/customizer/customizer.php');
-require_once(GH_THEME_DIR . '/components/gh-components.php');
+
+/**
+ * Sidebar/Widget Areas setup
+ *
+ * @link https://codex.wordpress.org/Sidebars
+ **/
+
+register_sidebar( [
+    'id'            => 'main-sidebar',
+    'name'          => esc_html__('Main Sidebar', 'gh'),
+    'description'   => esc_html__('Add widgets for main sidebar on the site'),
+    'before_widget' => '<div class="widget">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ] );
+
+
+  /**
+   * Customizer settings
+   *
+   **/
+  require_once(GH_THEME_DIR . '/inc/customizer/customizer.php');
+
+
+  /**
+   * Theme Components
+   *
+   **/
+  require_once(GH_THEME_DIR . '/components/gh-components.php');
