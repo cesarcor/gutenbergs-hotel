@@ -38,13 +38,21 @@ html, body {
 
 body {
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  overflow: auto; }
+  overflow: auto;
+  background-color: #F9F9F9; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #C8553D; }
 
 input, button {
   outline: none; }
+
+ul li {
+  list-style-type: none; }
 
 /*------------------------------------*
 	Headers
@@ -62,9 +70,12 @@ Top Bar
   position: relative;
   transition: 0.3s ease all; }
 
+.site-header {
+  background-color: #FFFFFF; }
+
 .container {
   display: grid;
-  padding: 10px 0; }
+  padding: 15px 0; }
   .container .site-logo {
     text-align: center; }
     .container .site-logo .custom-logo-link img {
@@ -244,9 +255,47 @@ Sub Menu
   display: flex; }
 
 /*------------------------------------*
+	Layout
+*------------------------------------*/
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 75% 1fr;
+  grid-gap: 20px; }
+
+/*------------------------------------*
+	Posts
+*------------------------------------*/
+.post {
+  margin-bottom: 25px; }
+  .post a {
+    color: #588B8B; }
+  .post .post-entry-header {
+    margin-bottom: 5px; }
+  .post .post-entry-content {
+    margin-bottom: 10px; }
+
+.post-entry-title {
+  font-size: 18px; }
+
+/*------------------------------------*
+	Sidebar
+*------------------------------------*/
+#main-sidebar {
+  background-color: #FFFFFF;
+  border: 1px solid #EBEBEB;
+  padding: 15px; }
+  #main-sidebar .widget {
+    margin-bottom: 15px; }
+
+/*------------------------------------*
 	Responsive Fixes
 *------------------------------------*/
 @media (max-width: 720px) {
+  /* -------- HEADER -------- */
   #masthead .container .main-nav .mobile-nav-btn {
     display: inline-block; }
 
@@ -284,6 +333,13 @@ Sub Menu
 
   .header-traditional .container,
   .header-burger .container {
-    grid-template-columns: 50% 1fr; } }
+    grid-template-columns: 50% 1fr; }
+
+  /* -------- LAYOUT -------- */
+  .wrapper {
+    width: 100%;
+    grid-template-columns: 1fr 1fr; }
+
+  /* -------- POSTS -------- */ }
 
 /*# sourceMappingURL=style.css.map */
