@@ -1,5 +1,8 @@
 @media (max-width: 720px) {
 
+
+/* -------- HEADER -------- */
+
   #masthead {
     .container {
       .main-nav {
@@ -75,6 +78,20 @@
   .header-burger .container {
     grid-template-columns: 50% 1fr;
   }
+
+  /* -------- LAYOUT -------- */
+
+
+  .wrapper{
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+
+  /* -------- POSTS -------- */
+
+
 
 
 }
