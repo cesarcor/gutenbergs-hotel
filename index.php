@@ -18,11 +18,22 @@ get_header();
 
   <main>
 
-    <?php
-    
-      get_template_part( 'template-parts/content', 'content');
+    <div class="wrapper">
 
-    ?>
+      <div class="wrapper-content">
+
+        <?php
+
+          get_template_part( '/template-parts/content/content', '');
+
+        ?>
+
+      </div>
+
+
+      <?php get_sidebar(); ?>
+
+    </div>
 
   </main>
 
