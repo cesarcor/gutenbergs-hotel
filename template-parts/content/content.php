@@ -1,13 +1,35 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  
-  <?php
+<?php
   if ( have_posts() ):
     while ( have_posts() ): the_post();
+?>
 
-    the_content();
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+    <header class="post-entry-header">
+
+      <h2 class="post-entry-title">
+
+        <a href="<?php the_permalink(); ?>">
+          <?php the_title(); ?>
+        </a>
+
+      </h2>
+
+    </header>
+
+    <div class="post-entry-content">
+
+      <?php the_excerpt(); ?>
+
+    </div>
+
+    <footer class="post-entry-footer">
+      <a href="<?php the_permalink(); ?>" class="btn">Read More</a>
+    </footer>
+
+  </article>
+
+  <?php
     endwhile;
   endif;
   ?>
-
-</article>
