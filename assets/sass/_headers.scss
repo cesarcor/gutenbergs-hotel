@@ -14,9 +14,13 @@ Top Bar
   transition: 0.3s ease all;
 }
 
+.site-header{
+  background-color: #FFFFFF;
+}
+
 .container {
   display: grid;
-  padding: 10px 0;
+  padding: 15px 0;
 
   .site-logo {
     text-align: center;
