@@ -22,12 +22,22 @@ html, body {
 body{
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: auto;
+  background-color: #F9F9F9;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-weight: bold;
 }
 
 a{
   text-decoration: none;
+  color: $mainOrange;
 }
 
 input, button{
   outline: none;
+}
+
+ul li{
+  list-style-type: none;
 }
