@@ -9,6 +9,14 @@
 
       <h2 class="post-entry-title">
 
+        <figure class="post-entry-thumbnail">
+
+          <a href="<?php the_permalink(); ?>">
+            <?php the_post_thumbnail(); ?>
+          </a>
+          
+        </figure>
+
         <a href="<?php the_permalink(); ?>">
           <?php the_title(); ?>
         </a>
