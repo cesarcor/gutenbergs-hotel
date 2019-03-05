@@ -11,9 +11,20 @@
 get_header();
 ?>
 
+  <main id="main" role="main">
 
-<?php
-  get_template_part('template-parts/content', 'single');
-?>
+    <div class="wrapper">
+
+      <div class="wrapper-content">
+
+      <?php
+        get_template_part('/template-parts/content/content', 'single');
+      ?>
+
+      </div>
+
+    </div>
+
+  </main>
 
 <?php get_footer(); ?>
