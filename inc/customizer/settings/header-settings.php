@@ -1,6 +1,8 @@
 <?php
 
-if (! defined('ABSPATH')) exit;
+if (! defined('ABSPATH')) {
+    exit;
+}
 
 class GH_Header_Settings
 {
@@ -98,6 +100,21 @@ class GH_Header_Settings
                   'panel' => 'gh_panel_header',
                   'priority' => 10
       ));
+
+
+        /*
+         * Setting: Header Height
+         */
+          $wp_customize->add_setting('gh_set_header_height', array(
+            'default' => 15
+        ));
+
+          $wp_customize->add_control('gh_cont_header_height', array(
+            'label' => 'Set Header Height (px)',
+            'section' => 'gh_header_styles_section',
+            'settings' => 'gh_set_header_height',
+            'type' => 'text'
+        ));
 
 
         /*
