@@ -1,0 +1,21 @@
+.post-intro {
+  text-align: center;
+  margin-bottom: 20px;
+
+  h1{
+    color: $mainGreen;
+    font-size: 32px;
+  }
+
+  .post-meta{
+    ul{
+      li{
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.single-entry-header{
+  margin-bottom: 20px;
+}
