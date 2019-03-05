@@ -82,6 +82,15 @@ add_theme_support(
 
 
 /**
+ * Add support for Features images in posts
+ *
+ * @link https://codex.wordpress.org/Post_Thumbnails
+ **/
+
+add_theme_support( 'post-thumbnails' );
+
+
+/**
  * Sidebar/Widget Areas setup
  *
  * @link https://codex.wordpress.org/Sidebars
