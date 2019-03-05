@@ -260,14 +260,20 @@ Sub Menu
   display: grid;
   grid-template-columns: 75% 1fr;
   grid-gap: 20px; }
+  @media (max-width: 1024px) {
+    .wrapper {
+      width: 100%; } }
 
 /*------------------------------------*
 	Posts
 *------------------------------------*/
 .post {
-  margin-bottom: 25px; }
+  margin-bottom: 30px; }
   .post a {
     color: #588B8B; }
+  .post img {
+    max-width: 100%;
+    height: auto; }
   .post .post-entry-header {
     margin-bottom: 5px; }
   .post .post-entry-content {
@@ -281,14 +287,31 @@ Sub Menu
   height: auto; }
 
 /*------------------------------------*
+	Single
+*------------------------------------*/
+.post-intro {
+  text-align: center;
+  margin-bottom: 20px; }
+  .post-intro h1 {
+    color: #588B8B;
+    font-size: 32px; }
+  .post-intro .post-meta ul li {
+    display: inline-block; }
+
+.single-entry-header {
+  margin-bottom: 20px; }
+
+/*------------------------------------*
 	Sidebar
 *------------------------------------*/
-#main-sidebar {
+#main-sidebar .sidebar-contain {
   background-color: #FFFFFF;
   border: 1px solid #EBEBEB;
   padding: 15px; }
-  #main-sidebar .widget {
+  #main-sidebar .sidebar-contain .widget {
     margin-bottom: 15px; }
+    #main-sidebar .sidebar-contain .widget h3 {
+      color: #588B8B; }
 
 /*------------------------------------*
 	Responsive Fixes
