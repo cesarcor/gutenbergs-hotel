@@ -40,7 +40,13 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 /*------------------------------------*
 	Posts
 *------------------------------------*/
-@import 'posts';
+@import 'posts/posts';
+
+
+/*------------------------------------*
+	Single
+*------------------------------------*/
+@import 'posts/single';
 
 
 /*------------------------------------*
