@@ -9,20 +9,20 @@ function gh_custom_header_styles()
 
      /* TOP BAR STYLES */
     .top-bar{
-      background-color: <?php echo get_theme_mod('gh_set_top_bar_color'); ?>
+      background-color: <?php echo get_theme_mod( 'gh_set_top_bar_color'  ); ?>
     }
 
     .top-bar ul li a{
-      color: <?php echo '#' . get_theme_mod('gh_set_top_bar_text_color'); ?>;
-      font-size: <?php echo get_theme_mod('gh_set_top_bar_text_size') . 'px'; ?>;
+      color: <?php echo '#' . get_theme_mod(  'gh_set_top_bar_text_color' ); ?>;
+      font-size: <?php echo get_theme_mod(  'gh_set_top_bar_text_size'  ) . 'px'; ?>;
     }
 
-    <?php if(get_theme_mod('gh_set_header_text_color')): ?>
+    <?php if(get_theme_mod( 'gh_set_header_text_color'  )): ?>
 
       .main-nav a,
       .nav-panel a,
       #left-nav a{
-        color: <?php echo get_theme_mod('gh_set_header_text_color'); ?>
+        color: <?php echo get_theme_mod(  'gh_set_header_text_color'  ); ?>
       }
 
       .hamburger.is-active .hamburger-inner,
@@ -31,7 +31,7 @@ function gh_custom_header_styles()
       .hamburger-inner,
       .hamburger-inner::before,
       .hamburger-inner::after{
-        background-color: <?php echo get_theme_mod('gh_set_header_text_color'); ?>
+        background-color: <?php echo get_theme_mod( 'gh_set_header_text_color'  ); ?>
       }
 
     <?php else: ?>
@@ -54,6 +54,11 @@ function gh_custom_header_styles()
     <?php endif; ?>
 
 
+    #masthead .container {
+      padding: <?php echo get_theme_mod( '15', 'gh_set_header_height' ) . 'px' ?> 0;
+    }
+
+
     .site-header,
     .nav-panel{
       background-color: <?php echo get_theme_mod('gh_set_header_bg_color'); ?>
@@ -64,20 +69,11 @@ function gh_custom_header_styles()
     }
 
 
-    /* --- SCROLL SETTING --- */
-    <?php if (get_theme_mod('gh_set_header_scroll') == 1 &&
-             get_theme_mod('gh_set_top_bar') == 1): ?>
+    /* --- Fixed Header Setting --- */
 
-       #masthead, .top-bar{
-         position: fixed;
-         z-index: 100;
-       }
+    <?php ghHeaderScroll(); ?>
 
-       #masthead{
-         top: 28px;
-       }
-
-    <?php endif; ?>
+    /* --- Header Transparency Setting --- */
 
     <?php if (get_theme_mod('gh_set_header_transparency') == 1): ?>
 
@@ -95,11 +91,76 @@ function gh_custom_header_styles()
 }
 ?>
 
-<?php if (get_theme_mod('gh_set_header_resize') == 1): ?>
+
+<?php
+/*
+*
+* Handle fluid header resize on scroll:
+*
+*/
+
+
+function ghHeaderScroll(){ ?>
+
 
   <?php
-    function custom_header_js()
-    {
+
+  if (get_theme_mod('gh_set_header_scroll') == 1
+      && get_theme_mod( 'gh_set_top_bar' ) == 1): ?>
+
+      #masthead, .top-bar{
+        position: fixed;
+        z-index: 100;
+      }
+
+      main{
+        margin-top: calc(<?php echo get_theme_mod( 'gh_set_header_height' ) . 'px' ?> * 3);
+      }
+
+     #masthead{
+       top: 28px;
+     }
+
+  <?php
+
+  elseif(get_theme_mod('gh_set_header_scroll') == 1):
+
+  ?>
+
+  #masthead, .top-bar{
+    position: fixed;
+    z-index: 100;
+  }
+
+  main{
+    margin-top: calc(<?php echo get_theme_mod( 'gh_set_header_height' ) . 'px' ?> * 3);
+  }
+
+  #masthead{
+    top: 0px;
+  }
+
+  <?php
+    endif;
+  }
+?>
+
+
+
+<?php
+
+/*
+*
+* Handle fluid header resize on scroll:
+*
+*/
+
+  if (get_theme_mod('gh_set_header_resize') == 1):
+
+?>
+
+  <?php
+    function gh_custom_header_js(){
   ?>
 
     <script>
@@ -108,6 +169,7 @@ function gh_custom_header_styles()
 
     function ghScrollFunction() {
 
+      let header = document.querySelector('#masthead');
       let headerContainer = document.querySelector('#masthead .container');
       let headerLogo = document.querySelector('.site-logo a img');
 
@@ -115,6 +177,7 @@ function gh_custom_header_styles()
           headerLogo.style.height = '33px';
           headerLogo.style.transition = '.3s ease height';
           headerContainer.style.transition = ".3s ease all";
+          header.style.backgroundColor = "#FFF";
       } else {
           headerLogo.style.height = '45px';
       }
@@ -126,7 +189,7 @@ function gh_custom_header_styles()
 
   <?php
     }
-    add_action('wp_footer', 'custom_header_js');
+    add_action('wp_footer', 'gh_custom_header_js');
    ?>
 
 <?php endif; ?>
