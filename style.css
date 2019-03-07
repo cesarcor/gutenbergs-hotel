@@ -314,6 +314,17 @@ Sub Menu
       color: #588B8B; }
 
 /*------------------------------------*
+	Footer
+*------------------------------------*/
+#footer {
+  background-color: #FFD5C2; }
+
+.footer-content-contain {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+/*------------------------------------*
 	Responsive Fixes
 *------------------------------------*/
 @media (max-width: 720px) {
