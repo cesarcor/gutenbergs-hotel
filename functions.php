@@ -27,14 +27,16 @@ function gh_enqueue_assets()
  *
  **/
 
-add_action( 'customize_preview_init', 'gh_enqueue_customizer_assets' );
-function gh_enqueue_customizer_assets(){
-  wp_enqueue_script(
+add_action('customize_preview_init', 'gh_enqueue_customizer_assets');
+function gh_enqueue_customizer_assets()
+{
+    wp_enqueue_script(
     'gh_customizer_js',
      GH_THEME_URI . '/inc/customizer/customizer.js',
      array( 'jquery','customize-preview' ),
      filemtime(GH_THEME_DIR . '/inc/customizer/customizer.js'),
-     true );
+     true
+  );
 }
 
 
@@ -56,11 +58,12 @@ function gh_register_navs()
 }
 add_action('init', 'gh_register_navs');
 
-if(get_theme_mod( 'gh_set_header_type' ) == 'distributed'){
-  add_action( 'init', 'gh_distributed_left_menu' );
-  function gh_distributed_left_menu(){
-    register_nav_menu( 'distributed-left', __( 'Distributed Left', 'gh' ) );
-  }
+if (get_theme_mod('gh_set_header_type') == 'distributed') {
+    add_action('init', 'gh_distributed_left_menu');
+    function gh_distributed_left_menu()
+    {
+        register_nav_menu('distributed-left', __('Distributed Left', 'gh'));
+    }
 }
 
 
@@ -87,7 +90,7 @@ add_theme_support(
  * @link https://codex.wordpress.org/Post_Thumbnails
  **/
 
-add_theme_support( 'post-thumbnails' );
+add_theme_support('post-thumbnails');
 
 
 /**
@@ -96,15 +99,53 @@ add_theme_support( 'post-thumbnails' );
  * @link https://codex.wordpress.org/Sidebars
  **/
 
-register_sidebar( [
-    'id'            => 'main-sidebar',
-    'name'          => esc_html__('Main Sidebar', 'gh'),
-    'description'   => esc_html__('Add widgets for main sidebar on the site'),
-    'before_widget' => '<div class="widget">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>'
-  ] );
+function gh_widget_areas(){
+
+  register_sidebar([
+      'id'            => 'main-sidebar',
+      'name'          => esc_html__('Main Sidebar', 'gh'),
+      'description'   => esc_html__('Add widgets for main sidebar on the site'),
+      'before_widget' => '<div class="widget">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h3>',
+      'after_title'   => '</h3>'
+    ]);
+
+    register_sidebar([
+        'id'            => 'footer-1',
+        'name'          => esc_html__('Footer Column 1', 'gh'),
+        'description'   => esc_html__('Add widgets to first column of footer'),
+        'before_widget' => '<div class="widget">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>'
+      ]);
+
+      register_sidebar([
+          'id'            => 'footer-2',
+          'name'          => esc_html__('Footer Column 2', 'gh'),
+          'description'   => esc_html__('Add widgets to second column of footer'),
+          'before_widget' => '<div class="widget">',
+          'after_widget'  => '</div>',
+          'before_title'  => '<h3>',
+          'after_title'   => '</h3>'
+        ]);
+
+      register_sidebar([
+            'id'            => 'footer-3',
+            'name'          => esc_html__('Footer Column 3', 'gh'),
+            'description'   => esc_html__('Add widgets to third column of footer'),
+            'before_widget' => '<div class="widget">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3>',
+            'after_title'   => '</h3>'
+          ]);
+
+}
+
+add_action( 'widgets_init', 'gh_widget_areas' );
+
+
 
 
   /**
