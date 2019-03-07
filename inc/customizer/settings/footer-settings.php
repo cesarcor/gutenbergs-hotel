@@ -20,6 +20,37 @@ class GH_Footer_Settings{
                   'priority' => 12
     ));
 
+
+    /* ========
+     * Footer Type Section
+     ========== */
+    $wp_customize->add_section('gh_footer_type_section', array(
+              'title' => __('Footer Types & Layout Options', 'gh'),
+              'panel' => 'gh_panel_footer',
+              'priority' => 10
+    ));
+
+
+    /*
+     * Setting: Footer Type
+     */
+    $wp_customize->add_setting('gh_set_footer_type', array(
+          'default' => 'footer-3'
+    ));
+
+    $wp_customize->add_control('gh_cont_footer_type', array(
+              'label' => __('Footer Type', 'gh'),
+              'section' => 'gh_footer_type_section',
+              'settings' => 'gh_set_footer_type',
+              'type' => 'select',
+              'choices' => array(
+                      'footer-1' => 'Single Column Footer',
+                      'footer-2' => 'Two Column Footer',
+                      'footer-3' => 'Three Column Footer',
+                      'footer-4' => 'Four Column Footer'
+              )
+            ));
+
   }
 
 }
