@@ -1,13 +1,17 @@
 
   <footer id="footer">
 
-    <div class="footer-content-contain">
-      <?php gh_footer_type( get_theme_mod( 'gh_set_footer_type' ) ); ?>
-    </div>
+      <div class="wrapper">
 
-    <div id="copyright">
+        <div class="footer-content-contain">
+          <?php gh_footer_type( get_theme_mod( 'gh_set_footer_type' ) ); ?>
+        </div>
 
-    </div>
+      </div>
+
+      <div id="copyright">
+        <span><?php echo get_theme_mod( 'gh_set_footer_copyright_text', '© Gutenberg\'s Hotel' ); ?></span>
+      </div>
 
 
   </footer>

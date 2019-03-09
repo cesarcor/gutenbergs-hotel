@@ -320,9 +320,30 @@ Sub Menu
   background-color: #FFD5C2; }
 
 .footer-content-contain {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px; }
+  .footer-content-contain .footer-col {
+    text-align: center;
+    background-color: red; }
+
+.footer-1 {
+  grid-template-columns: 1fr; }
+
+.footer-2 {
+  grid-template-columns: 1fr 1fr; }
+
+.footer-3 {
+  grid-template-columns: 1fr 1fr 1fr; }
+
+.footer-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+#copyright {
+  background-color: #C8553D;
+  text-align: center;
+  padding: 10px; }
 
 /*------------------------------------*
 	Responsive Fixes
