@@ -1,16 +1,18 @@
 <?php
 
-if(!defined('ABSPATH')) exit;
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-class GH_Footer_Settings{
+class GH_Footer_Settings
+{
+    public function __construct()
+    {
+        add_action('customize_register', array($this, 'gh_customizer_options'));
+    }
 
-  public function __construct()
-  {
-      add_action('customize_register', array($this, 'gh_customizer_options'));
-  }
-
-  public function gh_customizer_options($wp_customize)
-  {
+    public function gh_customizer_options($wp_customize)
+    {
 
     /* ========
      * Footer Panel
@@ -21,24 +23,24 @@ class GH_Footer_Settings{
     ));
 
 
-    /* ========
-     * Footer Type Section
-     ========== */
-    $wp_customize->add_section('gh_footer_type_section', array(
+        /* ========
+         * Footer Type Section
+         ========== */
+        $wp_customize->add_section('gh_footer_type_section', array(
               'title' => __('Footer Types & Layout Options', 'gh'),
               'panel' => 'gh_panel_footer',
               'priority' => 10
-    ));
+            ));
 
 
-    /*
-     * Setting: Footer Type
-     */
-    $wp_customize->add_setting('gh_set_footer_type', array(
+        /*
+         * Setting: Footer Type
+         */
+        $wp_customize->add_setting('gh_set_footer_type', array(
           'default' => 'footer-3'
-    ));
+        ));
 
-    $wp_customize->add_control('gh_cont_footer_type', array(
+        $wp_customize->add_control('gh_cont_footer_type', array(
               'label' => __('Footer Type', 'gh'),
               'section' => 'gh_footer_type_section',
               'settings' => 'gh_set_footer_type',
@@ -51,8 +53,30 @@ class GH_Footer_Settings{
               )
             ));
 
-  }
+        /*
+         * Setting: Footer Copyright Text
+         */
+        $wp_customize->add_setting('gh_set_footer_copyright_text', array(
+                'default' => '© Gutenberg\'s Hotel'
+            ));
 
+        $wp_customize->add_control('gh_cont_footer_copyright_text', array(
+                'label' => 'Set Copyright Text',
+                'section' => 'gh_footer_type_section',
+                'settings' => 'gh_set_footer_copyright_text',
+                'type' => 'text'
+            ));
+
+
+        /* ========
+         * Footer Type Section
+         ========== */
+        $wp_customize->add_section('gh_footer_styles_section', array(
+                  'title' => __('Footer Styles', 'gh'),
+                  'panel' => 'gh_panel_footer',
+                  'priority' => 10
+                ));
+    }
 }
 
 return new GH_Footer_Settings();
