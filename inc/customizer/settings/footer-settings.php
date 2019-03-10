@@ -69,12 +69,31 @@ class GH_Footer_Settings
 
 
         /* ========
-         * Footer Type Section
+         * Footer Style Section
          ========== */
         $wp_customize->add_section('gh_footer_styles_section', array(
                   'title' => __('Footer Styles', 'gh'),
                   'panel' => 'gh_panel_footer',
                   'priority' => 10
+                ));
+
+        /*
+         * Setting: Footer Background Color
+         */
+        $wp_customize->add_setting('gh_set_footer_bg_color', array(
+                            'default' => 'FFD5C2',
+                            'transport' => 'postMessage',
+                            'sanitize_callback' => 'sanitize_hex_color'
+                ));
+
+        $wp_customize->add_control(new WP_Customize_Color_Control(
+                    $wp_customize,
+                 'gh_cont_footer_bg_color',
+                    array(
+                        'label' => 'Header Background Color',
+                        'section' => 'gh_footer_styles_section',
+                        'settings' => 'gh_set_footer_bg_color'
+                    )
                 ));
     }
 }
