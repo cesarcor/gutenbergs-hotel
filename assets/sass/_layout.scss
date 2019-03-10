@@ -1,14 +1,22 @@
 .wrapper{
-  width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 15px;
-  display: grid;
-  grid-template-columns: 75% 1fr;
-  grid-gap: 20px;
 
   @media (max-width: 1024px){
     width: 100%;
   }
+
+}
+
+.wrapper-default{
+  width: 1200px;
+  display: grid;
+  grid-template-columns: 75% 1fr;
+  grid-gap: 20px;
+}
+
+.wrapper-full-width{
 
 }
