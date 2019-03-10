@@ -27,3 +27,22 @@
   max-width: 100%;
   height: auto;
 }
+
+.cards-posts{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  article.post{
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    width: 280px;
+  }
+
+  .post-entry-title,
+  .post-entry-content,
+  .post-entry-footer{
+    padding: 10px;
+  }
+
+}
