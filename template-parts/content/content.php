@@ -1,3 +1,5 @@
+<div class="<?php echo get_theme_mod( 'gh_set_post_skin' ) . '-posts'; ?>">
+
 <?php
   if ( have_posts() ):
     while ( have_posts() ): the_post();
@@ -7,20 +9,18 @@
 
     <header class="post-entry-header">
 
-      <h2 class="post-entry-title">
-
         <figure class="post-entry-thumbnail">
 
           <a href="<?php the_permalink(); ?>">
             <?php the_post_thumbnail(); ?>
           </a>
-          
+
         </figure>
 
+      <h2 class="post-entry-title">
         <a href="<?php the_permalink(); ?>">
           <?php the_title(); ?>
         </a>
-
       </h2>
 
     </header>
@@ -41,3 +41,5 @@
     endwhile;
   endif;
   ?>
+
+</div>
