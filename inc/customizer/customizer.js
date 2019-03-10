@@ -41,5 +41,15 @@
   });
 
 
+  /*
+   * Footer Background Color live Preview
+   */
+  wp.customize('gh_set_footer_bg_color', function(val){
+    val.bind(function(newval){
+      $('#footer').css('background-color', newval);
+    });
+  });
+
+
 
 })(jQuery);
