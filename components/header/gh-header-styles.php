@@ -9,20 +9,18 @@ function gh_custom_header_styles()
 
      /* TOP BAR STYLES */
     .top-bar{
-      background-color: <?php echo get_theme_mod( 'gh_set_top_bar_color'  ); ?>
+      background-color: <?php echo get_theme_mod( 'gh_set_top_bar_color', '#C8553D'  ); ?>
     }
 
     .top-bar ul li a{
-      color: <?php echo '#' . get_theme_mod(  'gh_set_top_bar_text_color' ); ?>;
-      font-size: <?php echo get_theme_mod(  'gh_set_top_bar_text_size'  ) . 'px'; ?>;
+      color: <?php echo get_theme_mod(  'gh_set_top_bar_text_color', '#FFFFFF' ); ?>;
+      font-size: <?php echo get_theme_mod( 'gh_set_top_bar_text_size', 12 ) . 'px'; ?>;
     }
 
-    <?php if(get_theme_mod( 'gh_set_header_text_color'  )): ?>
-
       .main-nav a,
       .nav-panel a,
       #left-nav a{
-        color: <?php echo get_theme_mod(  'gh_set_header_text_color'  ); ?>
+        color: <?php echo get_theme_mod(  'gh_set_header_text_color', '#C8553D'  ); ?>
       }
 
       .hamburger.is-active .hamburger-inner,
@@ -31,27 +29,8 @@ function gh_custom_header_styles()
       .hamburger-inner,
       .hamburger-inner::before,
       .hamburger-inner::after{
-        background-color: <?php echo get_theme_mod( 'gh_set_header_text_color'  ); ?>
+        background-color: <?php echo get_theme_mod( 'gh_set_header_text_color', '#C8553D'  ); ?>
       }
-
-    <?php else: ?>
-
-      .main-nav a,
-      .nav-panel a,
-      #left-nav a{
-        color: #C8553D;
-      }
-
-      .hamburger.is-active .hamburger-inner,
-      .hamburger.is-active .hamburger-inner:after,
-      .hamburger.is-active .hamburger-inner:before,
-      .hamburger-inner,
-      .hamburger-inner::before,
-      .hamburger-inner::after{
-        background-color: #C8553D;
-      }
-
-    <?php endif; ?>
 
 
     #masthead .container {
@@ -61,7 +40,7 @@ function gh_custom_header_styles()
 
     .site-header,
     .nav-panel{
-      background-color: <?php echo get_theme_mod('gh_set_header_bg_color'); ?>
+      background-color: <?php echo get_theme_mod('gh_set_header_bg_color', '#FFFFFF'); ?>
     }
 
     .site-header nav ul:not(.sub-menu) li a{
