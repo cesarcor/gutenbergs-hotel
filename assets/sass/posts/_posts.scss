@@ -1,48 +1,85 @@
-.post{
+.post {
   margin-bottom: 30px;
 
-  a{
+  a {
     color: $mainGreen;
   }
 
-  img{
+  img {
     max-width: 100%;
     height: auto;
   }
 
-  .post-entry-header{
+  .post-entry-header {
     margin-bottom: 5px;
   }
 
-  .post-entry-content{
+  .post-entry-content {
     margin-bottom: 10px;
   }
 }
 
-.post-entry-title{
+.post-entry-title {
   font-size: 18px;
 }
 
-.post-entry-thumbnail img{
+.post-entry-thumbnail img {
   max-width: 100%;
   height: auto;
 }
 
-.cards-posts{
+/*********** CARD POSTS *******/
+.cards-posts {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
-  article.post{
+  article.post {
     background-color: #FFFFFF;
     border-radius: 15px;
     width: 280px;
   }
 
-  .post-entry-title,
   .post-entry-content,
-  .post-entry-footer{
+  .post-entry-footer,
+  .post-entry-title {
     padding: 10px;
   }
+}
 
+/*********** MASONRY POSTS *******/
+.masonry-posts {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  -moz-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-align-content: space-between;
+  -moz-align-content: space-between;
+  align-content: space-between;
+  -ms-flex-line-pack: justify;
+  height: 800px;
+
+  .post {
+    width: 31.5%;
+    margin: 0 0 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .post-entry-content {
+      display: block;
+      margin: 0;
+      padding: 5px 15px 15px;
+      background: #f8f8f8;
+    }
+  }
 }

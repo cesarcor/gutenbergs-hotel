@@ -289,6 +289,7 @@ Sub Menu
   max-width: 100%;
   height: auto; }
 
+/*********** CARD POSTS *******/
 .cards-posts {
   display: flex;
   flex-direction: row;
@@ -297,10 +298,40 @@ Sub Menu
     background-color: #FFFFFF;
     border-radius: 15px;
     width: 280px; }
-  .cards-posts .post-entry-title,
   .cards-posts .post-entry-content,
-  .cards-posts .post-entry-footer {
+  .cards-posts .post-entry-footer,
+  .cards-posts .post-entry-title {
     padding: 10px; }
+
+/*********** MASONRY POSTS *******/
+.masonry-posts {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  -moz-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-align-content: space-between;
+  -moz-align-content: space-between;
+  align-content: space-between;
+  -ms-flex-line-pack: justify;
+  height: 800px; }
+  .masonry-posts .post {
+    width: 31.5%;
+    margin: 0 0 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+    .masonry-posts .post img {
+      width: 100%;
+      display: block; }
+    .masonry-posts .post .post-entry-content {
+      display: block;
+      margin: 0;
+      padding: 5px 15px 15px;
+      background: #f8f8f8; }
 
 /*------------------------------------*
 	Single
