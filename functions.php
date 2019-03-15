@@ -66,6 +66,17 @@ if (get_theme_mod('gh_set_header_type') == 'distributed') {
     }
 }
 
+/**
+ * Default Excerpt Length
+ *
+ * @link https://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_length
+ **/
+
+function gh_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'gh_excerpt_length' );
+
 
 /**
  * Add support for Custom Logo.
