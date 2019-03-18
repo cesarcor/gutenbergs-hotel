@@ -1,4 +1,4 @@
-<div class="<?php echo get_theme_mod( 'gh_set_post_skin' ) . '-posts'; ?>">
+<div class="<?php echo get_theme_mod( 'gh_set_post_skin', 'simple' ) . '-posts'; ?>">
 
 <?php
   if ( have_posts() ):
