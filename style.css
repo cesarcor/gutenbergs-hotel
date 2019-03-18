@@ -267,6 +267,10 @@ Sub Menu
   grid-template-columns: 75% 1fr;
   grid-gap: 20px; }
 
+.wrapper-full-width {
+  width: 100%;
+  margin: 20px; }
+
 /*------------------------------------*
 	Posts
 *------------------------------------*/
