@@ -40,8 +40,8 @@ class GH_Layout_Settings
               'settings' => 'gh_set_layout_type',
               'type' => 'select',
               'choices' => array(
-                      'default' => 'Default with Sidebar',
-                      'full-width' => 'Full Width'
+                      'wrapper-default' => 'Default with Sidebar',
+                      'wrapper-full-width' => 'Full Width'
               )
             ));
     }
