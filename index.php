@@ -16,9 +16,9 @@
 get_header();
 ?>
 
-  <main>
+  <main id="main" role="main">
 
-    <div class="wrapper">
+    <div class="wrapper <?php echo get_theme_mod( 'gh_set_layout_type', 'wrapper-default' ); ?>">
 
       <div class="wrapper-content">
 
