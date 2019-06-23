@@ -1,0 +1,17 @@
+input[type=text],
+input[type=phone],
+input[type=email],
+input[type=password],
+textarea{
+
+    border: 1px solid #e2e2e2;
+    padding: 4px;
+
+}
+
+input[type=submit]{
+    background-color: $mainOrange;
+    border-radius: 5px;
+    padding: 4px 8px;
+    color: $white;
+}
