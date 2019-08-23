@@ -10,7 +10,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package gutenbergs-hotel
- * @since 0.1
+ * 
+ * @since 1.0.0
  */
 
 get_header();
