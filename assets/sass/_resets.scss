@@ -8,6 +8,7 @@
   outline: 0;
   padding: 0;
   vertical-align: baseline;
+  line-height: 1.25;
 }
 
 html, body {
@@ -35,4 +36,17 @@ input, button{
 
 ul li{
   list-style-type: none;
+}
+
+p{
+  margin-bottom: 15px;
+}
+
+p,ul li, ol li, span{
+  font-size: 14px;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
 }
