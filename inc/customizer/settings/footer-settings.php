@@ -18,7 +18,7 @@ class GH_Footer_Settings
      * Footer Panel
      ========== */
         $wp_customize->add_panel('gh_panel_footer', array(
-                  'title' => __('Footer Options', 'gh'),
+                  'title' => __('Footer Options', 'gutenbergs-hotel'),
                   'priority' => 12
     ));
 
@@ -27,7 +27,7 @@ class GH_Footer_Settings
          * Footer Type Section
          ========== */
         $wp_customize->add_section('gh_footer_type_section', array(
-              'title' => __('Footer Types & Layout Options', 'gh'),
+              'title' => __('Footer Types & Layout Options', 'gutenbergs-hotel'),
               'panel' => 'gh_panel_footer',
               'priority' => 10
             ));
@@ -41,7 +41,7 @@ class GH_Footer_Settings
         ));
 
         $wp_customize->add_control('gh_cont_footer_type', array(
-              'label' => __('Footer Type', 'gh'),
+              'label' => __('Footer Type', 'gutenbergs-hotel'),
               'section' => 'gh_footer_type_section',
               'settings' => 'gh_set_footer_type',
               'type' => 'select',
@@ -72,7 +72,7 @@ class GH_Footer_Settings
          * Footer Style Section
          ========== */
         $wp_customize->add_section('gh_footer_styles_section', array(
-                  'title' => __('Footer Styles', 'gh'),
+                  'title' => __('Footer Styles', 'gutenbergs-hotel'),
                   'panel' => 'gh_panel_footer',
                   'priority' => 10
                 ));

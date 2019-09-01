@@ -16,7 +16,7 @@ class GH_Sidebar_Settings{
      * Sidebar Panel
      ========== */
         $wp_customize->add_panel('gh_panel_sidebar', array(
-                  'title' => __('Layout', 'gh'),
+                  'title' => __('Layout', 'gutenbergs-hotel'),
                   'priority' => 13
     ));
 

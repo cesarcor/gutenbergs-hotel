@@ -18,7 +18,7 @@ class GH_Header_Settings
      * Header Panel
      ========== */
         $wp_customize->add_panel('gh_panel_header', array(
-                  'title' => __('Header Options', 'gh'),
+                  'title' => __('Header Options', 'gutenbergs-hotel'),
                   'priority' => 10
     ));
 
@@ -41,7 +41,7 @@ class GH_Header_Settings
       ));
 
         $wp_customize->add_control('gh_cont_header_type', array(
-                  'label' => __('Header Type', 'gh'),
+                  'label' => __('Header Type', 'gutenbergs-hotel'),
                   'section' => 'gh_header_type_section',
                   'settings' => 'gh_set_header_type',
                   'type' => 'select',
@@ -214,7 +214,7 @@ class GH_Header_Settings
          * Top Bar Section
          ========== */
         $wp_customize->add_section('gh_top_bar_section', array(
-                  'title' => __('Top Bar', 'gh'),
+                  'title' => __('Top Bar', 'gutenbergs-hotel'),
                   'panel' => 'gh_panel_header',
                   'priority' => 1
       ));
@@ -228,7 +228,7 @@ class GH_Header_Settings
       ));
 
         $wp_customize->add_control('gh_cont_top_bar', array(
-                  'label' => __('Enable Top Bar', 'gh'),
+                  'label' => __('Enable Top Bar', 'gutenbergs-hotel'),
                   'section' => 'gh_top_bar_section',
                   'settings' => 'gh_set_top_bar',
                   'type' => 'radio',

@@ -18,7 +18,7 @@ class GH_Single_Settings
      * Layout Panel
      ========== */
             $wp_customize->add_panel('gh_panel_single', array(
-                      'title' => __('Single Post Settings', 'gh'),
+                      'title' => __('Single Post Settings', 'gutenbergs-hotel'),
                       'priority' => 12
         ));
 

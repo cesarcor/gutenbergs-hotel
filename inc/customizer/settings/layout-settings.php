@@ -26,7 +26,7 @@ class GH_Layout_Settings
          * Layout Type Section
          ========== */
         $wp_customize->add_section('gh_layout_section', array(
-          'title' => __('Layout', 'gh'),
+          'title' => __('Layout', 'gutenbergs-hotel'),
           'priority' => 12
         ));
 
@@ -35,7 +35,7 @@ class GH_Layout_Settings
         ));
 
         $wp_customize->add_control('gh_cont_layout_type', array(
-              'label' => __('Page Layout', 'gh'),
+              'label' => __('Page Layout', 'gutenbergs-hotel'),
               'section' => 'gh_layout_section',
               'settings' => 'gh_set_layout_type',
               'type' => 'select',

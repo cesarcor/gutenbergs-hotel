@@ -18,7 +18,7 @@ class GH_Posts_Settings
        * Posts Panel
        ========== */
           $wp_customize->add_panel('gh_panel_posts', array(
-                    'title' => __('Posts', 'gh'),
+                    'title' => __('Posts', 'gutenbergs-hotel'),
                     'priority' => 13
       ));
 
@@ -41,7 +41,7 @@ class GH_Posts_Settings
         ));
 
           $wp_customize->add_control('gh_cont_post_skin', array(
-                    'label' => __('Post Skin', 'gh'),
+                    'label' => __('Post Skin', 'gutenbergs-hotel'),
                     'section' => 'gh_posts_styles_section',
                     'settings' => 'gh_set_post_skin',
                     'type' => 'select',
