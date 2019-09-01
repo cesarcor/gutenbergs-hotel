@@ -15,6 +15,7 @@
           <ul>
             <li><?php the_author(); ?></li>
             <li><?php echo get_the_date(); ?></li>
+            <li><?php the_tags(); ?></li>
           </ul>
         </div>
 
