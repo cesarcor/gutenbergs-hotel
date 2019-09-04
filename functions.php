@@ -96,12 +96,27 @@ add_theme_support(
 
 
 /**
- * Add support for Features images in posts
+ * Setup theme support
  *
- * @link https://codex.wordpress.org/Post_Thumbnails
+ * @link https://developer.wordpress.org/reference/functions/add_theme_support/
  **/
 
-add_theme_support('post-thumbnails');
+
+if ( !function_exists( 'gh_setup' ) ) {
+
+  function gh_setup() {
+
+      //Support for thumbnails on posts and pages
+      add_theme_support('post-thumbnails');
+
+      //WordPress manages the title
+      add_theme_support( 'title-tag' );
+
+  }
+
+  add_action( 'after_setup_theme', 'gh_setup' );
+
+}
 
 
 /**
