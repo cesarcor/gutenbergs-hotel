@@ -5,9 +5,12 @@
 
   .widget{
     margin-bottom: 15px;
+  }
 
-    h3{
-      color: $mainGreen;
+  ul{
+    li{
+      border-bottom: 1px dotted #EBEBEB;
+      margin: 8px 0;
     }
   }
 
