@@ -38,8 +38,13 @@ ul li{
   list-style-type: none;
 }
 
+h1, h2, h3, h4, h5, h6{
+  color: $mainGreen;
+}
+
 p{
   margin-bottom: 15px;
+  line-height: 1.5;
 }
 
 p,ul li, ol li, span{

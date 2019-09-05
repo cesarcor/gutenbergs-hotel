@@ -50,8 +50,12 @@ input, button {
 ul li {
   list-style-type: none; }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #588B8B; }
+
 p {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  line-height: 1.5; }
 
 p, ul li, ol li, span {
   font-size: 14px; }
@@ -500,8 +504,9 @@ input[type=submit] {
   padding: 15px; }
   #main-sidebar .sidebar-contain .widget {
     margin-bottom: 15px; }
-    #main-sidebar .sidebar-contain .widget h3 {
-      color: #588B8B; }
+  #main-sidebar .sidebar-contain ul li {
+    border-bottom: 1px dotted #EBEBEB;
+    margin: 8px 0; }
 
 /*------------------------------------*
 	Footer
