@@ -13,7 +13,7 @@ get_header();
 
 <main id="main" class="site-main">
 
-  <div class="wrapper <?php echo is_front_page() ? 'full-width-wrap' : 'wrapper-default'; ?>">
+  <!-- <div class="wrapper <?php //echo is_front_page() ? 'full-width-wrap' : 'wrapper-default'; ?>"> -->
 
     <div class="wrapper-content">
 
@@ -24,15 +24,6 @@ get_header();
           get_template_part('template-parts/content/content', 'page');
         endif;
         ?>
-      </div>
-
-      <?php 
-        /**
-         * Hide sidebar if it's the front page
-         */
-        if(!is_front_page()) get_sidebar(); 
-      ?>
-
   <div>
 
 </main>
