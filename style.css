@@ -191,9 +191,11 @@ Top Bar
 
 .container {
   display: grid;
-  padding: 15px 0; }
+  padding: 15px 0;
+  width: 1200px;
+  margin: 0 auto; }
   .container .site-logo {
-    text-align: center; }
+    text-align: left; }
     .container .site-logo .custom-logo-link img {
       max-height: 45px;
       width: auto; }
@@ -557,8 +559,9 @@ input[type=submit] {
 #copyright {
   background-color: #C8553D;
   text-align: center;
-  font-size: 10px;
-  padding: 10px; }
+  font-size: 8px;
+  padding: 10px;
+  color: #FFFFFF; }
 
 /*------------------------------------*
 	Responsive Fixes
