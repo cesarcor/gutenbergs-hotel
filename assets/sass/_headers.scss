@@ -21,9 +21,11 @@ Top Bar
 .container {
   display: grid;
   padding: 15px 0;
+  width: 1200px;
+  margin: 0 auto;
 
   .site-logo {
-    text-align: center;
+    text-align: left;
 
     .custom-logo-link {
       img {
