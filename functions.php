@@ -112,6 +112,11 @@ if ( !function_exists( 'gh_setup' ) ) {
       //WordPress manages the title
       add_theme_support( 'title-tag' );
 
+      //Image wide alignment
+      add_theme_support( 'align-wide' );
+
+      add_theme_support('responsive-embeds');
+
   }
 
   add_action( 'after_setup_theme', 'gh_setup' );
@@ -130,7 +135,7 @@ function gh_widget_areas(){
   register_sidebar([
       'id'            => 'main-sidebar',
       'name'          => esc_html__('Main Sidebar', 'gutenbergs-hotel'),
-      'description'   => esc_html__('Add widgets for main sidebar on the site'),
+      'description'   => esc_html__('Add widgets for main sidebar on the site', 'gutenbergs-hotel'),
       'before_widget' => '<div class="widget">',
       'after_widget'  => '</div>',
       'before_title'  => '<h3>',
@@ -139,8 +144,8 @@ function gh_widget_areas(){
 
     register_sidebar([
         'id'            => 'footer-1',
-        'name'          => esc_html__('Footer Column 1', 'gutenbergs-hotel'),
-        'description'   => esc_html__('Add widgets to first column of footer'),
+        'name'          => esc_html__('Footer Column 1', 'gutenbergs-hotel', 'gutenbergs-hotel'),
+        'description'   => esc_html__('Add widgets to first column of footer', 'gutenbergs-hotel'),
         'before_widget' => '<div class="widget">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3>',
@@ -150,7 +155,7 @@ function gh_widget_areas(){
       register_sidebar([
           'id'            => 'footer-2',
           'name'          => esc_html__('Footer Column 2', 'gutenbergs-hotel'),
-          'description'   => esc_html__('Add widgets to second column of footer'),
+          'description'   => esc_html__('Add widgets to second column of footer', 'gutenbergs-hotel'),
           'before_widget' => '<div class="widget">',
           'after_widget'  => '</div>',
           'before_title'  => '<h3>',
@@ -160,7 +165,7 @@ function gh_widget_areas(){
       register_sidebar([
             'id'            => 'footer-3',
             'name'          => esc_html__('Footer Column 3', 'gutenbergs-hotel'),
-            'description'   => esc_html__('Add widgets to third column of footer'),
+            'description'   => esc_html__('Add widgets to third column of footer', 'gutenbergs-hotel'),
             'before_widget' => '<div class="widget">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3>',
