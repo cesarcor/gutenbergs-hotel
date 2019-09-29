@@ -144,7 +144,7 @@ function gh_widget_areas(){
 
     register_sidebar([
         'id'            => 'footer-1',
-        'name'          => esc_html__('Footer Column 1', 'gutenbergs-hotel', 'gutenbergs-hotel'),
+        'name'          => esc_html__('Footer Column 1', 'gutenbergs-hotel'),
         'description'   => esc_html__('Add widgets to first column of footer', 'gutenbergs-hotel'),
         'before_widget' => '<div class="widget">',
         'after_widget'  => '</div>',
